@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hume Winzar">
+
+<title>The Negative Binomial–Dirichlet Model – Breakthrough_Business_Intelligence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Breakthrough_Business_Intelligence</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About this site</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#purchase-incidence-the-negative-binomial-distribution" id="toc-purchase-incidence-the-negative-binomial-distribution" class="nav-link" data-scroll-target="#purchase-incidence-the-negative-binomial-distribution"><span class="header-section-number">1</span> Purchase Incidence — The Negative Binomial Distribution</a>
+  <ul class="collapse">
+  <li><a href="#formula" id="toc-formula" class="nav-link" data-scroll-target="#formula"><span class="header-section-number">1.1</span> Formula</a></li>
+  <li><a href="#zero-class-probability" id="toc-zero-class-probability" class="nav-link" data-scroll-target="#zero-class-probability"><span class="header-section-number">1.2</span> Zero-Class Probability</a></li>
+  </ul></li>
+  <li><a href="#brand-choice-the-dirichlet-component" id="toc-brand-choice-the-dirichlet-component" class="nav-link" data-scroll-target="#brand-choice-the-dirichlet-component"><span class="header-section-number">2</span> Brand Choice — The Dirichlet Component</a></li>
+  <li><a href="#how-the-two-components-fit-together" id="toc-how-the-two-components-fit-together" class="nav-link" data-scroll-target="#how-the-two-components-fit-together"><span class="header-section-number">3</span> How the Two Components Fit Together</a>
+  <ul class="collapse">
+  <li><a href="#visual-summary" id="toc-visual-summary" class="nav-link" data-scroll-target="#visual-summary"><span class="header-section-number">3.1</span> Visual Summary</a></li>
+  </ul></li>
+  <li><a href="#interpretation-and-marketing-insights" id="toc-interpretation-and-marketing-insights" class="nav-link" data-scroll-target="#interpretation-and-marketing-insights"><span class="header-section-number">4</span> Interpretation and Marketing Insights</a>
+  <ul class="collapse">
+  <li><a href="#double-jeopardy" id="toc-double-jeopardy" class="nav-link" data-scroll-target="#double-jeopardy"><span class="header-section-number">4.1</span> Double Jeopardy</a></li>
+  <li><a href="#duplication-of-purchase" id="toc-duplication-of-purchase" class="nav-link" data-scroll-target="#duplication-of-purchase"><span class="header-section-number">4.2</span> Duplication of Purchase</a></li>
+  </ul></li>
+  <li><a href="#estimating-parameters" id="toc-estimating-parameters" class="nav-link" data-scroll-target="#estimating-parameters"><span class="header-section-number">5</span> Estimating Parameters</a>
+  <ul class="collapse">
+  <li><a href="#step-1-estimate-category-parameters" id="toc-step-1-estimate-category-parameters" class="nav-link" data-scroll-target="#step-1-estimate-category-parameters"><span class="header-section-number">5.1</span> Step 1 — Estimate Category Parameters</a></li>
+  <li><a href="#step-2-estimate-brand-parameters" id="toc-step-2-estimate-brand-parameters" class="nav-link" data-scroll-target="#step-2-estimate-brand-parameters"><span class="header-section-number">5.2</span> Step 2 — Estimate Brand Parameters</a>
+  <ul class="collapse">
+  <li><a href="#example-computing-dirichlet-parameters-from-market-shares" id="toc-example-computing-dirichlet-parameters-from-market-shares" class="nav-link" data-scroll-target="#example-computing-dirichlet-parameters-from-market-shares"><span class="header-section-number">5.2.1</span> Example: Computing Dirichlet Parameters from Market Shares</a></li>
+  <li><a href="#step-1-compute-individual-parameters" id="toc-step-1-compute-individual-parameters" class="nav-link" data-scroll-target="#step-1-compute-individual-parameters"><span class="header-section-number">5.2.2</span> Step 1 — Compute individual parameters</a></li>
+  <li><a href="#step-2-write-the-dirichlet-pdf" id="toc-step-2-write-the-dirichlet-pdf" class="nav-link" data-scroll-target="#step-2-write-the-dirichlet-pdf"><span class="header-section-number">5.2.3</span> Step 2 — Write the Dirichlet PDF</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">5.2.4</span> Interpretation</a></li>
+  <li><a href="#distinguishing-alpha_0-dirichlet-from-k-negative-binomial" id="toc-distinguishing-alpha_0-dirichlet-from-k-negative-binomial" class="nav-link" data-scroll-target="#distinguishing-alpha_0-dirichlet-from-k-negative-binomial"><span class="header-section-number">5.2.5</span> Distinguishing <span class="math inline">\(\alpha_0\)</span> (Dirichlet) from <span class="math inline">\(k\)</span> (Negative Binomial)</a></li>
+  </ul></li>
+  <li><a href="#typical-parameter-ranges" id="toc-typical-parameter-ranges" class="nav-link" data-scroll-target="#typical-parameter-ranges"><span class="header-section-number">5.3</span> Typical Parameter Ranges</a></li>
+  </ul></li>
+  <li><a href="#summary-of-model-structure" id="toc-summary-of-model-structure" class="nav-link" data-scroll-target="#summary-of-model-structure"><span class="header-section-number">6</span> Summary of Model Structure</a>
+  <ul class="collapse">
+  <li><a href="#visualising-k-vs-alpha_0-two-kinds-of-heterogeneity" id="toc-visualising-k-vs-alpha_0-two-kinds-of-heterogeneity" class="nav-link" data-scroll-target="#visualising-k-vs-alpha_0-two-kinds-of-heterogeneity"><span class="header-section-number">6.1</span> Visualising <span class="math inline">\(k\)</span> vs <span class="math inline">\(\alpha_0\)</span>: Two Kinds of Heterogeneity</a>
+  <ul class="collapse">
+  <li><a href="#diagram-1-where-each-parameter-acts" id="toc-diagram-1-where-each-parameter-acts" class="nav-link" data-scroll-target="#diagram-1-where-each-parameter-acts"><span class="header-section-number">6.1.1</span> Diagram 1 — Where each parameter acts</a></li>
+  <li><a href="#diagram-2-two-axis-intuition-vertical-k-horizontal-alpha_0" id="toc-diagram-2-two-axis-intuition-vertical-k-horizontal-alpha_0" class="nav-link" data-scroll-target="#diagram-2-two-axis-intuition-vertical-k-horizontal-alpha_0"><span class="header-section-number">6.1.2</span> Diagram 2 — “Two-axis” intuition (vertical = <span class="math inline">\(k\)</span>, horizontal = <span class="math inline">\(\alpha_0\)</span>)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#understanding-penetration-in-the-dirichlet-model" id="toc-understanding-penetration-in-the-dirichlet-model" class="nav-link" data-scroll-target="#understanding-penetration-in-the-dirichlet-model"><span class="header-section-number">7</span> Understanding “Penetration” in the Dirichlet Model</a>
+  <ul class="collapse">
+  <li><a href="#buyer-penetration-dirichlet-definition" id="toc-buyer-penetration-dirichlet-definition" class="nav-link" data-scroll-target="#buyer-penetration-dirichlet-definition"><span class="header-section-number">7.1</span> Buyer Penetration (Dirichlet definition)</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">7.1.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#retail-or-numeric-penetration-physical-availability" id="toc-retail-or-numeric-penetration-physical-availability" class="nav-link" data-scroll-target="#retail-or-numeric-penetration-physical-availability"><span class="header-section-number">7.2</span> Retail or Numeric Penetration (Physical Availability)</a></li>
+  <li><a href="#how-the-two-meanings-relate" id="toc-how-the-two-meanings-relate" class="nav-link" data-scroll-target="#how-the-two-meanings-relate"><span class="header-section-number">7.3</span> How the Two Meanings Relate</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.4</span> Summary</a></li>
+  </ul></li>
+  <li><a href="#common-misunderstandings-about-the-dirichlet-model" id="toc-common-misunderstandings-about-the-dirichlet-model" class="nav-link" data-scroll-target="#common-misunderstandings-about-the-dirichlet-model"><span class="header-section-number">8</span> Common Misunderstandings about the Dirichlet Model</a>
+  <ul class="collapse">
+  <li><a href="#key-reminder" id="toc-key-reminder" class="nav-link" data-scroll-target="#key-reminder"><span class="header-section-number">8.1</span> Key Reminder</a></li>
+  </ul></li>
+  <li><a href="#modelling-the-effects-of-mental-availability-in-the-nbd-framework" id="toc-modelling-the-effects-of-mental-availability-in-the-nbd-framework" class="nav-link" data-scroll-target="#modelling-the-effects-of-mental-availability-in-the-nbd-framework"><span class="header-section-number">9</span> Modelling the Effects of Mental Availability in the NBD Framework</a>
+  <ul class="collapse">
+  <li><a href="#where-mental-availability-fits" id="toc-where-mental-availability-fits" class="nav-link" data-scroll-target="#where-mental-availability-fits"><span class="header-section-number">9.1</span> Where Mental Availability Fits</a></li>
+  <li><a href="#how-the-nbd-predicts-penetration" id="toc-how-the-nbd-predicts-penetration" class="nav-link" data-scroll-target="#how-the-nbd-predicts-penetration"><span class="header-section-number">9.2</span> How the NBD Predicts Penetration</a></li>
+  <li><a href="#what-information-the-model-needs" id="toc-what-information-the-model-needs" class="nav-link" data-scroll-target="#what-information-the-model-needs"><span class="header-section-number">9.3</span> What Information the Model Needs</a></li>
+  <li><a href="#example-simulating-a-mental-availability-lift" id="toc-example-simulating-a-mental-availability-lift" class="nav-link" data-scroll-target="#example-simulating-a-mental-availability-lift"><span class="header-section-number">9.4</span> Example: Simulating a Mental Availability Lift</a></li>
+  <li><a href="#summary-interpretation" id="toc-summary-interpretation" class="nav-link" data-scroll-target="#summary-interpretation"><span class="header-section-number">9.5</span> Summary Interpretation</a></li>
+  </ul></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
+  <ul class="collapse">
+  <li><a href="#the-dirichletmultinomial-link" id="toc-the-dirichletmultinomial-link" class="nav-link" data-scroll-target="#the-dirichletmultinomial-link">The Dirichlet–Multinomial Link</a></li>
+  <li><a href="#connecting-to-the-nbddirichlet" id="toc-connecting-to-the-nbddirichlet" class="nav-link" data-scroll-target="#connecting-to-the-nbddirichlet">Connecting to the NBD–Dirichlet</a></li>
+  <li><a href="#why-this-matters-intuitively" id="toc-why-this-matters-intuitively" class="nav-link" data-scroll-target="#why-this-matters-intuitively">Why this matters (intuitively)</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="NBD_Dirichlet.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Negative Binomial–Dirichlet Model</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hume Winzar </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<p>The <strong>Negative Binomial Distribution (NBD)</strong> and the <strong>Dirichlet distribution</strong> together form the statistical foundation of modern marketing science.<br>
+They underpin the analyses presented in <em>How Brands Grow</em> (Sharp, 2010) and explain regular patterns such as <strong>brand penetration</strong>, <strong>repeat purchasing</strong>, and <strong>Duplication of Purchase (DoP)</strong>.</p>
+<p>The combined model is known as the <strong>NBD–Dirichlet model</strong>.</p>
+<hr>
+</section>
+<section id="purchase-incidence-the-negative-binomial-distribution" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Purchase Incidence — The Negative Binomial Distribution</h1>
+<p>The Negative Binomial Distribution models the <strong>number of purchases per person</strong> in a given period for a whole <strong>product category</strong>.</p>
+<p>It assumes:<br>
+- Each individual has their own average purchase rate, <em>lambda</em>, ( <span class="math inline">\(\lambda_i\)</span> ),<br>
+- Across people, ( <span class="math inline">\(\lambda_i\)</span> ) follows a <em>Gamma distribution</em> (<span class="math inline">\(\Gamma(\cdot)\)</span>),<br>
+- Purchases for each individual follow a <em>Poisson process</em>.</p>
+<p>Mixing the two distributions yields the <em>Negative Binomial</em>.</p>
+<section id="formula" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="formula"><span class="header-section-number">1.1</span> Formula</h2>
+<p><span class="math display">\[
+P(X = x) =
+\frac{\Gamma(x + k)}{\Gamma(k)\, x!}
+\left(\frac{k}{k + \mu}\right)^{k}
+\left(\frac{\mu}{k + \mu}\right)^{x},
+\quad x = 0,1,2,\ldots
+\]</span></p>
+<p>where:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: left;">Number of purchases per person per period</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">Mean purchase rate per person</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">Dispersion (heterogeneity) parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Gamma(\cdot)\)</span></td>
+<td style="text-align: left;">Gamma function</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>mean</em> and <em>variance</em> are:</p>
+<p><span class="math display">\[
+E[X] = \mu, \qquad Var[X] = \mu\left(1 + \frac{\mu}{k}\right)
+\]</span></p>
+<hr>
+</section>
+<section id="zero-class-probability" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="zero-class-probability"><span class="header-section-number">1.2</span> Zero-Class Probability</h2>
+<p>The probability that a randomly chosen person makes <em>zero</em> purchases is:</p>
+<p><span class="math display">\[
+P(0) = \left(\frac{k}{k+\mu}\right)^k
+\]</span></p>
+<p>Hence, the <strong>category penetration</strong> is:</p>
+<p><span class="math display">\[
+\text{Penetration} = 1 - P(0)
+\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P(0)\)</span></td>
+<td style="text-align: left;">Proportion of people who make no purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(1 - P(0)\)</span></td>
+<td style="text-align: left;">Proportion of people who make at least one purchase</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">Degree of heterogeneity — smaller (<span class="math inline">\(k\)</span>) means greater variability</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="brand-choice-the-dirichlet-component" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Brand Choice — The Dirichlet Component</h1>
+<p>Once we know how often people buy the category, we can model <em>which brand</em> they buy.</p>
+<p>The <strong>Dirichlet distribution</strong> models how individuals allocate their purchases across brands.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(s_i\)</span></td>
+<td style="text-align: left;">Market share of brand ‘i’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(m\)</span></td>
+<td style="text-align: left;">Number of competing brands</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
+<td style="text-align: left;">Dirichlet parameter for brand ‘i’</td>
+</tr>
+</tbody>
+</table>
+<p>Each consumer has a personal probability vector (<span class="math inline">\(p_1, p_2, \dots, p_m\)</span>) representing their purchase probabilities across brands,<br>
+and across consumers these follow a Dirichlet distribution:</p>
+<p><span class="math display">\[
+(p_1, \dots, p_m)  \sim  \text{Dirichlet}(\alpha_1, \dots, \alpha_m)
+\]</span></p>
+<p>Combining the NBD (purchase incidence) with the Dirichlet (brand choice) gives the <strong>NBD–Dirichlet model</strong>.</p>
+<p>This combined model predicts:</p>
+<ul>
+<li><strong>Brand penetration</strong> (how many people buy each brand),</li>
+<li><strong>Purchase frequency per buyer</strong>,</li>
+<li><strong>Duplication of purchase</strong> (brand overlap),</li>
+<li><strong>Market share</strong> and <strong>loyalty patterns</strong>.</li>
+</ul>
+<hr>
+</section>
+<section id="how-the-two-components-fit-together" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> How the Two Components Fit Together</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">NBD</td>
+<td style="text-align: left;">Mean category purchase rate per person</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">NBD</td>
+<td style="text-align: left;">Dispersion (heterogeneity) parameter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P(0)\)</span></td>
+<td style="text-align: left;">NBD</td>
+<td style="text-align: left;">Probability of zero category purchases</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(1 - P(0)\)</span></td>
+<td style="text-align: left;">NBD</td>
+<td style="text-align: left;">Category penetration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(s_i\)</span></td>
+<td style="text-align: left;">Dirichlet</td>
+<td style="text-align: left;">Market share of brand <span class="math inline">\('i'\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha_i\)</span></td>
+<td style="text-align: left;">Dirichlet</td>
+<td style="text-align: left;">Shape parameter proportional to brand share</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brand penetration</td>
+<td style="text-align: left;">NBD–Dirichlet</td>
+<td style="text-align: left;">% of people who buy brand <span class="math inline">\('i'\)</span> at least once</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Duplication of purchase</td>
+<td style="text-align: left;">NBD–Dirichlet</td>
+<td style="text-align: left;">% of buyers of Brand A who also buy Brand B</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="visual-summary" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="visual-summary"><span class="header-section-number">3.1</span> Visual Summary</h2>
+<div width="90%">
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'neutral', 'flowchart': {'htmlLabels': false}} }%%
+flowchart TD
+  A["Category purchase rate (μ, k)&lt;br/&gt;→ Negative Binomial"]
+  A --&gt; B["Observed zero-class probability P(0)&lt;br/&gt;and&lt;br/&gt;Penetration = 1 − P(0)"]
+  B --&gt; C["Brand choice probabilities (s₁ … sₘ)&lt;br/&gt;→ Dirichlet"]
+  C --&gt; D["Predictions for each brand:&lt;br/&gt;• Market share&lt;br/&gt;• Brand penetration&lt;br/&gt;• Repeat buying&lt;br/&gt;• Duplication of purchase"]
+  style D text-align:left
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="interpretation-and-marketing-insights" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Interpretation and Marketing Insights</h1>
+<blockquote class="blockquote">
+<p>“Growth comes from increasing <strong>penetration</strong>, not from chasing loyalty.”<br>
+— <em>How Brands Grow</em>, Byron Sharp (2010)</p>
+</blockquote>
+<p>The NBD–Dirichlet model demonstrates that many brand performance patterns are <strong>statistical regularities</strong> rather than unique</p>
+<p>Key insights:</p>
+<ul>
+<li><strong>Big brands</strong> have <em>more buyers</em> (low <span class="math inline">\(P(0)\)</span>) and slightly higher repeat-purchase rates.</li>
+<li><strong>Small brands</strong> have <em>fewer buyers</em> (high <span class="math inline">\(P(0)\)</span>) and slightly lower repeat-purchase rates.</li>
+<li>Buyer behaviour differences largely reflect <strong>market share and penetration</strong>, not deep attitudinal differences.</li>
+</ul>
+<p>These principles explain two major empirical “laws” of marketing:</p>
+<hr>
+<section id="double-jeopardy" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="double-jeopardy"><span class="header-section-number">4.1</span> Double Jeopardy</h2>
+<p>Small brands suffer <em>twice</em>: they have <strong>fewer buyers</strong> (low penetration) and those buyers are <strong>slightly less loyal</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 43%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Brand Type</th>
+<th style="text-align: left;">Penetration</th>
+<th style="text-align: left;">Purchase Frequency (per buyer)</th>
+<th style="text-align: left;">Illustration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Large</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Slightly higher</td>
+<td style="text-align: left;">e.g.&nbsp;Coca-Cola</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Small</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Slightly lower</td>
+<td style="text-align: left;">e.g.&nbsp;Dr Pepper</td>
+</tr>
+</tbody>
+</table>
+<p>This pattern arises naturally from the NBD–Dirichlet model and is not a sign of marketing failure.</p>
+</section>
+<section id="duplication-of-purchase" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="duplication-of-purchase"><span class="header-section-number">4.2</span> Duplication of Purchase</h2>
+<p>Brands “share” their buyers roughly in proportion to other brands’ market shares:</p>
+<blockquote class="blockquote">
+<p>Buyers of Brand A are more likely to buy Brand B if Brand B is <strong>large</strong>.</p>
+</blockquote>
+<p>Mathematically, the <strong>Duplication of Purchase (DoP)</strong> rate is predictable from the Dirichlet component:</p>
+<p><span class="math display">\[
+\text{DoP}_{A,B} \approx s_B \left(\frac{1 - p_A}{1 - s_A}\right)
+\]</span></p>
+<p>where<br>
+<span class="math inline">\(s_B\)</span> = market share of brand B,<br>
+<span class="math inline">\(p_A\)</span> = penetration of brand A,<br>
+<span class="math inline">\(s_A\)</span> = market share of brand A.</p>
+<hr>
+</section>
+</section>
+<section id="estimating-parameters" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Estimating Parameters</h1>
+<p>Practical estimation steps:</p>
+<section id="step-1-estimate-category-parameters" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="step-1-estimate-category-parameters"><span class="header-section-number">5.1</span> Step 1 — Estimate Category Parameters</h2>
+<p>From purchase or panel data:</p>
+<p>Zero-Class Probability <span class="math inline">\(P(0)\)</span>:</p>
+<p><span class="math display">\[
+P(0) = \frac{\text{Number of non-buyers}}{\text{Total people}}
+\]</span></p>
+<p>Average category purchases:</p>
+<p><span class="math display">\[
+\mu = \text{Average category purchases per person (including zeros)}
+\]</span></p>
+<p>Then solve numerically for (<span class="math inline">\(k\)</span>) in:</p>
+<p><span class="math display">\[
+P(0) = \left(\frac{k}{k+\mu}\right)^k
+\]</span></p>
+<p>This can be done using <strong>Goal Seek</strong> or <strong>Solver</strong> in <em>MS Excel</em> or by numerical root-finding in <strong>R</strong>.</p>
+<hr>
+</section>
+<section id="step-2-estimate-brand-parameters" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="step-2-estimate-brand-parameters"><span class="header-section-number">5.2</span> Step 2 — Estimate Brand Parameters</h2>
+<p>From brand-level data:</p>
+<ul>
+<li>Market shares (<span class="math inline">\(s_i\)</span>)</li>
+<li>Number of brands (<span class="math inline">\(m\)</span>)</li>
+</ul>
+<p>These feed into the Dirichlet component, which models how total category purchases are divided across brands.</p>
+<section id="example-computing-dirichlet-parameters-from-market-shares" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="example-computing-dirichlet-parameters-from-market-shares"><span class="header-section-number">5.2.1</span> Example: Computing Dirichlet Parameters from Market Shares</h3>
+<p>Suppose a category has <strong>four brands</strong> with the following observed market shares:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 33%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Brand</th>
+<th style="text-align: right;">Market Share <span class="math inline">\(s_i\)</span></th>
+<th style="text-align: center;">Calculation <span class="math inline">\(\alpha_i = \alpha_0 s_i\)</span></th>
+<th style="text-align: right;">Dirichlet Parameter <span class="math inline">\(\alpha_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: center;"><span class="math inline">\(20 \times 0.40\)</span></td>
+<td style="text-align: right;">8.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: center;"><span class="math inline">\(20 \times 0.25\)</span></td>
+<td style="text-align: right;">5.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: center;"><span class="math inline">\(20 \times 0.20\)</span></td>
+<td style="text-align: right;">4.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: center;"><span class="math inline">\(20 \times 0.15\)</span></td>
+<td style="text-align: right;">3.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>1.00</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"><span class="math inline">\(\alpha_0 = 20.0\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="where-does-the-value-20-come-from" class="level4" data-number="5.2.1.1">
+<h4 data-number="5.2.1.1" class="anchored" data-anchor-id="where-does-the-value-20-come-from"><span class="header-section-number">5.2.1.1</span> Where does the value 20 come from?</h4>
+<p>The constant <span class="math inline">\(\alpha_0\)</span> is called the <strong>concentration parameter</strong> (or sometimes the “total precision” or “Dirichlet strength”).<br>
+It represents how <em>tightly concentrated</em> the brand-choice probabilities are around the observed market shares.</p>
+<ul>
+<li>A <strong>larger <span class="math inline">\(\alpha_0\)</span></strong> means <strong>less variability</strong> across consumers (everyone buys in proportion to market shares).<br>
+</li>
+<li>A <strong>smaller <span class="math inline">\(\alpha_0\)</span></strong> means <strong>more heterogeneity</strong> (some buyers specialise strongly in one brand).</li>
+</ul>
+<p>The value of <span class="math inline">\(\alpha_0 = 20\)</span> here is <strong>not derived from the shares themselves</strong> — it is either:</p>
+<ol type="1">
+<li><strong>Chosen arbitrarily</strong> for illustration (to make the numbers round), or<br>
+</li>
+<li><strong>Estimated from category data</strong>, e.g., using observed duplication or repeat-buying rates.</li>
+</ol>
+<p>In practice, researchers often infer <span class="math inline">\(\alpha_0\)</span> by fitting the Dirichlet model to panel data.<br>
+For example, if the observed duplication of purchase (brand overlap) is high, that implies a <strong>larger <span class="math inline">\(\alpha_0\)</span></strong>; if duplication is low (buyers are more brand-loyal), <span class="math inline">\(\alpha_0\)</span> is smaller.</p>
+<hr>
+</section>
+</section>
+<section id="step-1-compute-individual-parameters" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="step-1-compute-individual-parameters"><span class="header-section-number">5.2.2</span> Step 1 — Compute individual parameters</h3>
+<p>Given market shares <span class="math inline">\(s_i\)</span> and chosen <span class="math inline">\(\alpha_0\)</span>:</p>
+<p><span class="math display">\[
+\alpha_i = \alpha_0 s_i, \qquad \sum_{i=1}^{4} \alpha_i = \alpha_0 = 20.
+\]</span></p>
+<hr>
+</section>
+<section id="step-2-write-the-dirichlet-pdf" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="step-2-write-the-dirichlet-pdf"><span class="header-section-number">5.2.3</span> Step 2 — Write the Dirichlet PDF</h3>
+<p><span class="math display">\[
+f(p_1, p_2, p_3, p_4)
+= \frac{1}{B(8,5,4,3)} \;
+p_1^{8-1} p_2^{5-1} p_3^{4-1} p_4^{3-1},
+\qquad
+\sum_i p_i = 1, \; p_i &gt; 0.
+\]</span></p>
+<p>where the normalising constant <span class="math inline">\(B(8,5,4,3)\)</span> is:</p>
+<p><span class="math display">\[
+B(8,5,4,3)
+= \frac{\Gamma(8)\,\Gamma(5)\,\Gamma(4)\,\Gamma(3)}{\Gamma(8+5+4+3)}
+= \frac{\Gamma(8)\,\Gamma(5)\,\Gamma(4)\,\Gamma(3)}{\Gamma(20)}.
+\]</span></p>
+<hr>
+</section>
+<section id="interpretation" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">5.2.4</span> Interpretation</h3>
+<p>This fully specifies the Dirichlet distribution for brand-choice probabilities in this four-brand market.<br>
+If we were to draw many samples from this distribution:</p>
+<ul>
+<li>The <strong>mean</strong> brand shares would remain <span class="math inline">\(s_i\)</span>,</li>
+<li>But the <strong>variance</strong> and <strong>degree of brand duplication</strong> would depend on the total concentration <span class="math inline">\(\alpha_0\)</span>.</li>
+</ul>
+<p>A smaller <span class="math inline">\(\alpha_0\)</span> (say 5 instead of 20) would produce simulated markets with <em>more variability</em> in brand loyalty and purchase overlap.</p>
+</section>
+<section id="distinguishing-alpha_0-dirichlet-from-k-negative-binomial" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="distinguishing-alpha_0-dirichlet-from-k-negative-binomial"><span class="header-section-number">5.2.5</span> Distinguishing <span class="math inline">\(\alpha_0\)</span> (Dirichlet) from <span class="math inline">\(k\)</span> (Negative Binomial)</h3>
+<p>Although both <span class="math inline">\(\alpha_0\)</span> and <span class="math inline">\(k\)</span> describe heterogeneity, they belong to <strong>different parts</strong> of the NBD–Dirichlet model and have <strong>distinct interpretations</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Model component</th>
+<th style="text-align: left;">Describes variation in…</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;"><strong>Negative Binomial (NBD)</strong></td>
+<td style="text-align: left;">How often different consumers buy within the <em>category</em></td>
+<td style="text-align: left;">A <strong>small <span class="math inline">\(k\)</span></strong> means high variation in category purchase frequency — some people buy often, others rarely.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha_0\)</span></td>
+<td style="text-align: left;"><strong>Dirichlet</strong></td>
+<td style="text-align: left;">How consumers <em>allocate</em> their category purchases across brands</td>
+<td style="text-align: left;">A <strong>small <span class="math inline">\(\alpha_0\)</span></strong> means buyers are more brand-focused (less duplication); a <strong>large <span class="math inline">\(\alpha_0\)</span></strong> means buyers spread purchases more evenly.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="conceptual-summary" class="level4" data-number="5.2.5.1">
+<h4 data-number="5.2.5.1" class="anchored" data-anchor-id="conceptual-summary"><span class="header-section-number">5.2.5.1</span> Conceptual summary</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model stage</th>
+<th style="text-align: left;">Governs heterogeneity in</th>
+<th style="text-align: left;">Key parameter</th>
+<th style="text-align: left;">Example implication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Category purchase frequency</strong></td>
+<td style="text-align: left;">how many category purchases consumers make</td>
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">Two consumers might make 2 vs 20 category purchases in a period.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Brand choice behaviour</strong></td>
+<td style="text-align: left;">which brands those purchases go to</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha_0\)</span></td>
+<td style="text-align: left;">One consumer may buy almost only Brand A, another spreads across all brands.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="quick-intuition" class="level4" data-number="5.2.5.2">
+<h4 data-number="5.2.5.2" class="anchored" data-anchor-id="quick-intuition"><span class="header-section-number">5.2.5.2</span> Quick intuition</h4>
+<ul>
+<li><span class="math inline">\(k\)</span> shapes the <strong>vertical dimension</strong> — variation in <em>how many category purchases</em> people make.<br>
+</li>
+<li><span class="math inline">\(\alpha_0\)</span> shapes the <strong>horizontal dimension</strong> — variation in <em>how those purchases are shared across brands</em>.</li>
+</ul>
+<p>Together they define the market’s structure:</p>
+<p><span class="math display">\[
+\text{NBD–Dirichlet:} \quad
+\text{Frequency across consumers (via } k)
+\;\;+\;\;
+\text{Brand allocation across brands (via } \alpha_0).
+\]</span></p>
+<hr>
+</section>
+<section id="in-practice" class="level4" data-number="5.2.5.3">
+<h4 data-number="5.2.5.3" class="anchored" data-anchor-id="in-practice"><span class="header-section-number">5.2.5.3</span> In practice</h4>
+<p>When calibrating an NBD–Dirichlet model:</p>
+<ul>
+<li><span class="math inline">\(k\)</span> is typically estimated from <strong>category-level repeat rates</strong> or fitted to the category’s purchase frequency distribution.<br>
+</li>
+<li><span class="math inline">\(\alpha_0\)</span> is estimated from <strong>cross-brand duplication and loyalty</strong> patterns.</li>
+</ul>
+<p>They are <strong>independent but complementary</strong> — one governs <em>how often</em> people buy, the other <em>what mix</em> of brands they buy.</p>
+<hr>
+<hr>
+</section>
+</section>
+</section>
+<section id="typical-parameter-ranges" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="typical-parameter-ranges"><span class="header-section-number">5.3</span> Typical Parameter Ranges</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Typical Range</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">0.5 – 2.0</td>
+<td style="text-align: left;">Mean number of category purchases per person</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">0.3 – 2.0</td>
+<td style="text-align: left;">Dispersion (heterogeneity) &nbsp;smaller → more skewed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P(0)\)</span></td>
+<td style="text-align: left;">0.5 – 0.9</td>
+<td style="text-align: left;">Proportion of category non-buyers</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(1 - P(0)\)</span></td>
+<td style="text-align: left;">0.1 – 0.5</td>
+<td style="text-align: left;">Category penetration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(s_i\)</span></td>
+<td style="text-align: left;">0.01 – 0.40</td>
+<td style="text-align: left;">Market share of brand ‘i’</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="summary-of-model-structure" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Summary of Model Structure</h1>
+<p><span class="math display">\[
+\begin{aligned}
+P(X = x) &amp; = \text{Negative Binomial for purchase incidence} \\
+(p_1,\dots,p_m) &amp; = \text{Dirichlet for brand choice} \\
+\text{NBD–Dirichlet} &amp; = \text{Combination predicting market structure}
+\end{aligned}
+\]</span></p>
+<p>This framework explains:</p>
+<ul>
+<li>Regularities in brand performance,</li>
+<li>Differences between large and small brands,</li>
+<li>Stable duplication patterns across categories and markets.</li>
+</ul>
+<hr>
+<section id="visualising-k-vs-alpha_0-two-kinds-of-heterogeneity" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="visualising-k-vs-alpha_0-two-kinds-of-heterogeneity"><span class="header-section-number">6.1</span> Visualising <span class="math inline">\(k\)</span> vs <span class="math inline">\(\alpha_0\)</span>: Two Kinds of Heterogeneity</h2>
+<section id="diagram-1-where-each-parameter-acts" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="diagram-1-where-each-parameter-acts"><span class="header-section-number">6.1.1</span> Diagram 1 — Where each parameter acts</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'htmlLabels': true, 'useMaxWidth': true}} }%%
+
+flowchart TD
+  subgraph NBD["Negative Binomial (category frequency)"]
+    K["Heterogeneity parameter: k&lt;br/&gt;(smaller k = more spread in how often people buy the category)"]
+  end
+
+  subgraph DIR["Dirichlet (brand allocation)"]
+    A0["Concentration parameter: α₀&lt;br/&gt;(smaller α₀ = more brand focus; larger α₀ = more even spread across brands)"]
+  end
+
+  F["Observed frequency patterns&lt;br/&gt;(zeros, light/heavy buyers)"]
+  M["Observed brand metrics&lt;br/&gt;(duplication, loyalty, repertoire size)"]
+
+  K --&gt; F
+  A0 --&gt; M
+
+  F --&gt; O["Market outcomes"]
+  M --&gt; O
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="diagram-2-two-axis-intuition-vertical-k-horizontal-alpha_0" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="diagram-2-two-axis-intuition-vertical-k-horizontal-alpha_0"><span class="header-section-number">6.1.2</span> Diagram 2 — “Two-axis” intuition (vertical = <span class="math inline">\(k\)</span>, horizontal = <span class="math inline">\(\alpha_0\)</span>)</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'htmlLabels': true, 'useMaxWidth': true}} }%%
+flowchart TD
+  T["Category purchases per person&lt;br/&gt;(vertical spread set by k)"]
+  L["Brand mix within those purchases&lt;br/&gt;(horizontal spread set by α₀)"]
+
+  subgraph AXIS["Two independent sources of heterogeneity"]
+    T --- L
+  end
+
+  T --&gt; EX1["Smaller k → more light &amp; heavy buyers&lt;br/&gt;(more zeroes and extremes)"]
+  L --&gt; EX2["Smaller α₀ → stronger brand focus&lt;br/&gt;(lower duplication; higher observed loyalty)"]
+
+  EX1 --&gt; OBS["Observed market patterns"]
+  EX2 --&gt; OBS
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+<section id="quick-recap" class="level4" data-number="6.1.2.1">
+<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="quick-recap"><span class="header-section-number">6.1.2.1</span> Quick recap</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">What varies</th>
+<th style="text-align: left;">Lower value implies…</th>
+<th style="text-align: left;">Higher value implies…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">NBD (category frequency)</td>
+<td style="text-align: left;">How often people buy the <strong>category</strong></td>
+<td style="text-align: left;">More dispersion (more light &amp; heavy buyers; higher <span class="math inline">\(P(0)\)</span>)</td>
+<td style="text-align: left;">More homogeneity (buyers cluster around the mean)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha_0\)</span></td>
+<td style="text-align: left;">Dirichlet (brand allocation)</td>
+<td style="text-align: left;">How purchases are split across <strong>brands</strong></td>
+<td style="text-align: left;">More brand focus (lower duplication, higher observed loyalty)</td>
+<td style="text-align: left;">More even spread (higher duplication, similar repertoires)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb.</strong><br>
+Think <strong>vertical</strong> for <span class="math inline">\(k\)</span> (how many category purchases) and <strong>horizontal</strong> for <span class="math inline">\(\alpha_0\)</span> (how those purchases are shared across brands). They’re <strong>independent but complementary</strong>.</p>
+<hr>
+</section>
+</section>
+</section>
+</section>
+<section id="understanding-penetration-in-the-dirichlet-model" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Understanding “Penetration” in the Dirichlet Model</h1>
+<p>The term <strong>penetration</strong> can mean two very different things in marketing.<br>
+In the <strong>Dirichlet model</strong>, it refers to <strong>buyer penetration</strong> — not retail or distribution penetration.</p>
+<hr>
+<section id="buyer-penetration-dirichlet-definition" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="buyer-penetration-dirichlet-definition"><span class="header-section-number">7.1</span> Buyer Penetration (Dirichlet definition)</h2>
+<p>In the NBD–Dirichlet framework, <em>penetration</em> is:</p>
+<blockquote class="blockquote">
+<p><strong>The proportion of all category buyers who purchased the brand at least once during the period.</strong></p>
+</blockquote>
+<p>Formally:</p>
+<p><span class="math display">\[
+p_i = \frac{\text{Number of category buyers who bought brand } i}{\text{Total number of category buyers}}
+\]</span></p>
+<p>It describes <strong>how many people bought</strong>, not how many times they bought, and not how many stores stock the brand.</p>
+<section id="example" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">7.1.1</span> Example</h3>
+<p>If 10,000 people bought chocolate bars this year and<br>
+7,000 of them bought <em>KitKat</em> at least once,<br>
+then KitKat’s <strong>penetration</strong> = 70%.</p>
+<p>Penetration is a key driver in the Dirichlet system because:</p>
+<p><span class="math display">\[
+\text{Market share} \approx p_i \times \text{Average purchase rate (among buyers)}
+\]</span></p>
+<p>So, brands grow mainly by <strong>gaining more buyers</strong>, not by dramatically increasing loyalty or purchase frequency.</p>
+<hr>
+</section>
+</section>
+<section id="retail-or-numeric-penetration-physical-availability" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="retail-or-numeric-penetration-physical-availability"><span class="header-section-number">7.2</span> Retail or Numeric Penetration (Physical Availability)</h2>
+<p>In retail metrics, <em>penetration</em> (also called <em>numeric distribution</em>) means something else:</p>
+<blockquote class="blockquote">
+<p><strong>The proportion of retail outlets that stock the brand at least once during a period.</strong></p>
+</blockquote>
+<p><span class="math display">\[
+\text{Retail penetration} =
+\frac{\text{Number of stores carrying the brand}}{\text{Total stores selling the category}}
+\]</span></p>
+<p>This is a <strong>supply-side</strong> measure of <em>physical availability</em>, not a consumer behaviour measure.</p>
+<hr>
+</section>
+<section id="how-the-two-meanings-relate" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="how-the-two-meanings-relate"><span class="header-section-number">7.3</span> How the Two Meanings Relate</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">What it measures</th>
+<th style="text-align: left;">Data source</th>
+<th style="text-align: left;">Used in the Dirichlet model?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Buyer penetration</strong></td>
+<td style="text-align: left;">% of category buyers who purchased the brand</td>
+<td style="text-align: left;">Consumer panel or survey</td>
+<td style="text-align: left;">✅ Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Retail penetration</strong></td>
+<td style="text-align: left;">% of outlets stocking the brand</td>
+<td style="text-align: left;">Retail audit or scanner data</td>
+<td style="text-align: left;">❌ No</td>
+</tr>
+</tbody>
+</table>
+<p>Retail penetration enables buyer penetration — a brand must be available in stores before consumers can buy it — but the Dirichlet model itself only uses <strong>buyer penetration</strong> to explain market-level patterns such as market share, duplication of purchase, and loyalty.</p>
+<hr>
+</section>
+<section id="summary" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.4</span> Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">In plain English</th>
+<th style="text-align: left;">In Dirichlet modelling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Buyer penetration</strong></td>
+<td style="text-align: left;">% of people who bought the brand</td>
+<td style="text-align: left;">Core input/output</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Retail penetration</strong></td>
+<td style="text-align: left;">% of stores that stock the brand</td>
+<td style="text-align: left;">External driver</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Market share</strong></td>
+<td style="text-align: left;">% of category volume sold by the brand</td>
+<td style="text-align: left;">Derived outcome</td>
+</tr>
+</tbody>
+</table>
+<p>In short:</p>
+<ul>
+<li><strong>Retail penetration</strong> reflects <em>availability</em>;<br>
+</li>
+<li><strong>buyer penetration</strong> reflects <em>actual buying</em>.</li>
+</ul>
+<p>The Dirichlet model focuses on the latter — the behaviour of people, not stores.</p>
+</section>
+</section>
+<section id="common-misunderstandings-about-the-dirichlet-model" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Common Misunderstandings about the Dirichlet Model</h1>
+<p>Even bright business students sometimes confuse the Dirichlet model with psychological or managerial theories of consumer behaviour.<br>
+The table below highlights some typical misconceptions and the correct interpretations.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Misunderstanding</th>
+<th style="text-align: left;">Clarification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>1. “Penetration means how many stores stock the brand.”</strong></td>
+<td style="text-align: left;">In the Dirichlet model, penetration refers to <strong>buyers</strong>, not stores — the % of people who bought the brand at least once in a given period. <br> Retail distribution is a separate measure of <em>physical availability</em>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2. “Loyalty drives market share.”</strong></td>
+<td style="text-align: left;">It’s the opposite: <strong>market share (penetration)</strong> largely determines observed loyalty. <br> Larger brands have slightly higher repeat rates simply because they have more buyers, not because their buyers are intrinsically more loyal.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>3. “People are assumed to buy at random, so advertising doesn’t matter.”</strong></td>
+<td style="text-align: left;">The model assumes statistical independence, not <em>psychological randomness</em>. <br> Advertising, distinctive assets, and availability all influence the <em>probabilities</em> of brand choice — they shift the parameters (<span class="math inline">\(s_i\)</span>, <span class="math inline">\(p_i\)</span>).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>4. “If the laws always hold, marketing research is pointless.”</strong></td>
+<td style="text-align: left;">The laws describe <em>expected patterns</em>, not tactical details. <br> Research helps diagnose <em>deviations</em> (e.g., low penetration vs share, weak duplication) and guides execution — such as which category entry points to strengthen.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>5. “The Dirichlet predicts individual behaviour.”</strong></td>
+<td style="text-align: left;">It predicts <strong>aggregate probabilities</strong>, not who personally will switch brands. <br> It’s a model of markets, not personalities.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>6. “Small brands should focus on building loyalty before reach.”</strong></td>
+<td style="text-align: left;">In reality, almost all growth comes from <strong>gaining more buyers</strong>. <br> Loyalty rises automatically once penetration increases.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>7. “Categories with subscriptions or infrequent purchases break the model.”</strong></td>
+<td style="text-align: left;">The same patterns emerge when analysed over an appropriate time frame (e.g., contract renewal cycles, multi-year purchases). <br> Purchase opportunities differ, but the underlying heterogeneity logic remains valid.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>8. “Dirichlet models only apply to groceries.”</strong></td>
+<td style="text-align: left;">The empirical laws hold across <strong>services, durables, B2B, and luxury</strong> — anywhere people have repeat or substitute buying opportunities.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="key-reminder" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="key-reminder"><span class="header-section-number">8.1</span> Key Reminder</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="How to Think About the Dirichlet">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How to Think About the Dirichlet
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Dirichlet model doesn’t explain <em>why</em> people buy — it describes <em>how</em> buyers collectively behave in steady-state markets.</p>
+<p>Its purpose is descriptive, predictive, and diagnostic, not psychological.</p>
+<p>Use it to test whether brand data fit expected norms, and to identify genuine marketing anomalies.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="modelling-the-effects-of-mental-availability-in-the-nbd-framework" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Modelling the Effects of Mental Availability in the NBD Framework</h1>
+<p>An increase in <strong>mental availability</strong> — for example, after an effective advertising campaign — can be represented within the <strong>Negative Binomial Distribution (NBD)</strong> model as a change in a brand’s <em>probability of being chosen</em>.</p>
+<p>In the combined <strong>NBD–Dirichlet system</strong>, mental availability affects the <strong>Dirichlet layer</strong> (how purchases are divided among brands), but its observable effects appear through the <strong>NBD layer</strong>, which predicts buyer penetration and purchase frequency.</p>
+<hr>
+<section id="where-mental-availability-fits" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="where-mental-availability-fits"><span class="header-section-number">9.1</span> Where Mental Availability Fits</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model layer</th>
+<th style="text-align: left;">Describes</th>
+<th style="text-align: left;">Key parameters</th>
+<th style="text-align: left;">Connection to marketing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NBD (Negative Binomial)</strong></td>
+<td style="text-align: left;">Variation in category buying frequency across consumers</td>
+<td style="text-align: left;"><span class="math inline">\(\mu, k\)</span></td>
+<td style="text-align: left;">Category buying patterns</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Dirichlet</strong></td>
+<td style="text-align: left;">Allocation of those purchases across brands</td>
+<td style="text-align: left;"><span class="math inline">\(s_i\)</span> (brand share of buying occasions)</td>
+<td style="text-align: left;">Brand mental &amp; physical availability</td>
+</tr>
+</tbody>
+</table>
+<p>When advertising improves a brand’s <em>mental availability</em>, it increases its probability of being chosen at each buying occasion — captured by <span class="math inline">\(s_i\)</span>.</p>
+<hr>
+</section>
+<section id="how-the-nbd-predicts-penetration" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="how-the-nbd-predicts-penetration"><span class="header-section-number">9.2</span> How the NBD Predicts Penetration</h2>
+<p>In the NBD model, the probability of a consumer making <strong>zero</strong> purchases of a given brand in the period is:</p>
+<p><span class="math display">\[
+P(0) = \left(\frac{k}{k + s_i \mu}\right)^k
+\]</span></p>
+<p>Therefore, the <strong>buyer penetration</strong> (probability of at least one purchase) is:</p>
+<p><span class="math display">\[
+\text{Penetration} = 1 - P(0)
+\]</span></p>
+<p>An increase in <span class="math inline">\(s_i\)</span> — due to higher brand salience or mental availability — reduces <span class="math inline">\(P(0)\)</span>, meaning <strong>more category buyers now buy the brand</strong>.</p>
+<hr>
+</section>
+<section id="what-information-the-model-needs" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="what-information-the-model-needs"><span class="header-section-number">9.3</span> What Information the Model Needs</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Typical data source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">Average number of category purchases per buyer per period</td>
+<td style="text-align: left;">Panel data or market totals</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(k\)</span></td>
+<td style="text-align: left;">Dispersion parameter (heterogeneity of buying rates)</td>
+<td style="text-align: left;">Estimated from category data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(s_i\)</span></td>
+<td style="text-align: left;">Brand’s share of category purchase occasions</td>
+<td style="text-align: left;">Market share or assumed change</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: left;">Total number of category buyers</td>
+<td style="text-align: left;">Sets the base for buyer counts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta s_i\)</span></td>
+<td style="text-align: left;">Change in share due to mental availability increase</td>
+<td style="text-align: left;">Estimated effect of advertising</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="example-simulating-a-mental-availability-lift" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="example-simulating-a-mental-availability-lift"><span class="header-section-number">9.4</span> Example: Simulating a Mental Availability Lift</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: right;">Before campaign</th>
+<th style="text-align: right;">After campaign</th>
+<th style="text-align: left;">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Category mean purchases (μ)</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: left;">Category constant</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dispersion (<span class="math inline">\(k\)</span>)</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">Stable heterogeneity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brand share (<span class="math inline">\(s_i\)</span>)</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: left;">Mental availability ↑ 25%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P(0) = \left(\frac{k}{k + s_i \mu}\right)^k\)</span></td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: left;">Fewer non-buyers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Penetration (<span class="math inline">\(1 – P(0)\)</span>)</strong></td>
+<td style="text-align: right;"><strong>0.44</strong></td>
+<td style="text-align: right;"><strong>0.54</strong></td>
+<td style="text-align: left;">Buyer base ↑ 10 points</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Expected share</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: left;">Matches assumed lift</td>
+</tr>
+</tbody>
+</table>
+<p>An increase in <em>mental availability</em> (here, a 25% increase in recall or consideration) translates into:</p>
+<ul>
+<li>noticeably higher <strong>penetration</strong>, and<br>
+</li>
+<li>a proportional lift in <strong>market share</strong> — exactly as predicted by <em>How Brands Grow</em>.</li>
+</ul>
+<hr>
+</section>
+<section id="summary-interpretation" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="summary-interpretation"><span class="header-section-number">9.5</span> Summary Interpretation</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Direction of effect</th>
+<th style="text-align: left;">Marketing meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">↑ Mental availability</td>
+<td style="text-align: left;">↑ <span class="math inline">\(s_i\)</span></td>
+<td style="text-align: left;">More likely to be chosen</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">↑ <span class="math inline">\(s_i\)</span></td>
+<td style="text-align: left;">↓ <span class="math inline">\(P(0)\)</span></td>
+<td style="text-align: left;">Fewer non-buyers → higher penetration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">↑ Penetration</td>
+<td style="text-align: left;">↑ Market share</td>
+<td style="text-align: left;">Growth through more buyers</td>
+</tr>
+</tbody>
+</table>
+<p>In short: <strong>Advertising and distinctive assets expand mental availability</strong>, which mathematically increases a brand’s choice probability <span class="math inline">\(s_i\)</span>.</p>
+<p>Through the NBD, this produces measurable gains in buyer penetration and market share, even when the category’s total purchasing rate (μ) and heterogeneity (k) remain constant.</p>
+<hr>
+</section>
+</section>
+<section id="appendix" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix</h1>
+<p>Technical explanation that no-one is expected to read.</p>
+<section id="the-dirichletmultinomial-link" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-dirichletmultinomial-link">The Dirichlet–Multinomial Link</h2>
+<p>The Dirichlet is a prior on brand choice probabilities.<br>
+If each shopper has her own probability vector</p>
+<p><span class="math display">\[
+(p_1, p_2, \dots, p_m) \sim \text{Dirichlet}(\alpha_1, \alpha_2, \dots, \alpha_m),
+\]</span></p>
+<p>then conditional on those probabilities, the shopper’s actual purchase <em>realizations</em> across brands in a period follow a <strong>multinomial</strong> distribution.</p>
+<p>That is, if the shopper makes <span class="math inline">\(x\)</span> total purchases in the category in the period, and we observe counts for each of <span class="math inline">\(m\)</span> brands <span class="math inline">\((x_1, x_2, \dots, x_m)\)</span> with <span class="math inline">\(\sum_{i=1}^m x_i = x\)</span>, then:</p>
+<p><span class="math display">\[
+P(x_1, \dots, x_m \mid p_1, \dots, p_m, x)
+= \frac{x!}{\prod_{i=1}^m x_i!}
+\prod_{i=1}^m p_i^{x_i}.
+\]</span></p>
+<p>Its <strong>probability density function (PDF)</strong> is:</p>
+<p><span class="math display">\[
+f(p_1, \dots, p_m;\, \alpha_1, \dots, \alpha_m)
+= \frac{1}{B(\alpha_1, \dots, \alpha_m)}
+\prod_{i=1}^m p_i^{\alpha_i - 1},
+\quad \text{where } \sum_{i=1}^m p_i = 1, \; p_i &gt; 0
+\]</span></p>
+<p>and the <strong>normalising constant</strong> <span class="math inline">\(B(\cdot)\)</span> (the multivariate Beta function) is:</p>
+<p><span class="math display">\[
+B(\alpha_1, \dots, \alpha_m)
+= \frac{\prod_{i=1}^m \Gamma(\alpha_i)}
+{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}.
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(p_i\)</span> = Proportion of purchases allocated to brand <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(\alpha_i\)</span> = Dirichlet shape parameter for brand <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(B(\cdot)\)</span> = Multivariate <em>Beta</em> function ensuring the distribution integrates to 1</li>
+</ul>
+<p>Now we <strong>integrate out</strong> the unobserved personal probabilities <span class="math inline">\((p_1,\dots,p_m)\)</span> by using the Dirichlet prior.<br>
+This yields the <strong>Dirichlet–multinomial</strong> distribution:</p>
+<p><span class="math display">\[
+P(x_1, \dots, x_m \mid \alpha_1, \dots, \alpha_m, x)
+=
+\frac{x!}{\prod_{i=1}^m x_i!}
+\,
+\frac{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}
+     {\Gamma\!\left(x + \sum_{i=1}^m \alpha_i\right)}
+\prod_{i=1}^m
+\frac{\Gamma(x_i + \alpha_i)}{\Gamma(\alpha_i)}.
+\]</span></p>
+<p>Key points:</p>
+<ul>
+<li>(<span class="math inline">\(x_i\)</span>) = number of purchases of brand ‘i’ made by this person in the period<br>
+</li>
+<li>(<span class="math inline">\(x = \sum_i x_i\)</span>) = total category purchases for this person in the period<br>
+</li>
+<li>(<span class="math inline">\(\alpha_i\)</span>) = Dirichlet shape parameters, typically proportional to long-run brand shares<br>
+</li>
+<li>(<span class="math inline">\(\Gamma(\cdot)\)</span>) = gamma function</li>
+</ul>
+<p>This distribution gives the probability of observing a particular “basket split” across brands, for a given total number of purchases <span class="math inline">\(x\)</span>, <strong>without needing to know that shopper’s individual loyalties explicitly</strong>. The <span class="math inline">\(\alpha_i\)</span> encode typical brand attractiveness / repertoire weights at the population level.</p>
+<hr>
+</section>
+<section id="connecting-to-the-nbddirichlet" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="connecting-to-the-nbddirichlet">Connecting to the NBD–Dirichlet</h2>
+<p>We now have two layers:</p>
+<ol type="1">
+<li><p><strong>How many category purchases are made?</strong><br>
+The total category purchase count <span class="math inline">\(X\)</span> for a shopper follows a Negative Binomial with parameters <span class="math inline">\((\mu, k)\)</span>:</p>
+<p><span class="math display">\[
+P(X = x) =
+\frac{\Gamma(x + k)}{\Gamma(k)\, x!}
+\left(\frac{k}{k + \mu}\right)^k
+\left(\frac{\mu}{k + \mu}\right)^x,
+\quad x = 0,1,2,\ldots
+\]</span></p></li>
+<li><p><strong>How are those</strong> <span class="math inline">\(x\)</span> purchases allocated across brands?<br>
+Conditional on <span class="math inline">\(X = x\)</span>, the vector of brand-level counts <span class="math inline">\((x_1, \dots, x_m)\)</span> with <span class="math inline">\(\sum_i x_i = x\)</span> follows a Dirichlet–multinomial with parameters <span class="math inline">\((\alpha_1, \dots, \alpha_m)\)</span>:</p>
+<p><span class="math display">\[
+P(x_1, \dots, x_m \mid X = x)
+=
+\frac{x!}{\prod_{i=1}^m x_i!}
+\,
+\frac{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}
+     {\Gamma\!\left(x + \sum_{i=1}^m \alpha_i\right)}
+\prod_{i=1}^m
+\frac{\Gamma(x_i + \alpha_i)}{\Gamma(\alpha_i)}.
+\]</span></p></li>
+</ol>
+<p>The full <strong>NBD–Dirichlet model</strong> is the hierarchical combination:</p>
+<ul>
+<li>First layer (incidence): draw <span class="math inline">\(X \sim \text{NegBin}(\mu, k)\)</span>.</li>
+<li>Second layer (allocation): draw <span class="math inline">\((x_1,\dots,x_m) \mid X \sim \text{Dirichlet–Multinomial}(\alpha_1,\dots,\alpha_m).\)</span></li>
+</ul>
+<p>This two-stage structure produces the classic <em>Ehrenberg–Bass</em> predictions:</p>
+<ul>
+<li><strong>Penetration</strong> of each brand</li>
+<li><strong>Average purchase frequency</strong> per brand’s buyers</li>
+<li><strong>Duplication of purchase</strong> between brands</li>
+<li>The <strong>Double Jeopardy</strong> pattern<br>
+(small brands have fewer buyers and slightly less loyalty)</li>
+</ul>
+<hr>
+</section>
+<section id="why-this-matters-intuitively" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="why-this-matters-intuitively">Why this matters (intuitively)</h2>
+<ul>
+<li><p>The Negative Binomial captures:<br>
+<em>“How often do people buy in this category at all?”</em></p></li>
+<li><p>The Dirichlet–multinomial captures:<br>
+<em>“Given that they’re buying, how do they split those purchases across brands?”</em></p></li>
+</ul>
+<p>That’s the full engine under <em>How Brands Grow</em>.</p>
+</section>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<ul>
+<li>Sharp, B. (2010). <em>How Brands Grow: What Marketers Don’t Know</em>. Oxford University Press. ISBN 9780195573565 https://doi.org/10.1093/oso/9780195573565.001.0001<br>
+</li>
+<li>Sharp, B., Kennedy, R., &amp; Sharp, A. (2019). <em>How Brands Grow, Part 2: Emerging Markets, Services, Durables, New and Luxury Brands</em>. Oxford University Press. ISBN 9780195596267 https://doi.org/10.1093/oso/9780195596267.001.0001<br>
+</li>
+<li>Sharp, B., Wright, M., &amp; Goodhardt, G. J. (2002). Purchase loyalty is polarised, how brand loyalty differs by customer size. <em>Australasian Marketing Journal (AMJ)</em>, 10(3), 7–20. https://doi.org/10.1016/S1441-3582(02)70138-5<br>
+</li>
+<li>Ehrenberg, A. S. C., Uncles, M. D., &amp; Goodhardt, G. J. (2004). Understanding brand performance measures: Using Dirichlet distributions. <em>Journal of Business Research</em>, 57(12), 1307–1325. https://doi.org/10.1016/S0148-2963(03)00041-1<br>
+</li>
+<li>Goodhardt, G. J., Ehrenberg, A. S. C., &amp; Chatfield, C. (1984).<br>
+The Dirichlet: A comprehensive model of buying behaviour.<br>
+<em>Journal of the Royal Statistical Society. Series A (General)</em>, 147(5), 621–655.<br>
+https://doi.org/10.2307/2981578</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

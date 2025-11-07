@@ -1,0 +1,273 @@
+---
+title: "How Brands Grow Part 2b"
+author: 
+  - Jenni Romaniuk
+  - Byron Sharp
+
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    html-math-method: mathjax
+    mermaid:
+      theme: neutral
+  pdf:
+    toc: true
+    number-sections: true
+    papersize: A4
+    pdf-engine: xelatex
+    mermaid:
+      theme: neutral
+      themeVariables:
+        fontSize: 10 
+    header-includes: |
+      \usepackage[none]{hyphenat}
+      \usepackage{ragged2e}
+      \RaggedRight
+      
+bibliography: references.bib
+link-citations: true
+---
+
+:::::: {layout-ncol="3"}
+::: {.column width="25%"}
+![](images/HowBrandsGrowPart2_cover.jpg){width="25%"}
+:::
+
+::: {.column width="5%"}
+ 
+:::
+
+::: {.column width="70%"}
+Romaniuk, Jenni, & Sharp, Byron. (2023).\
+*How Brands Grow: Part 2 (Revised Edition).*\
+Oxford University Press.
+:::
+::::::
+
+\newpage
+
+# How Brands Grow, Part 2 – Revised Edition (Romaniuk & Sharp 2023)
+
+The **Revised Edition** builds upon the 2015/2019 *Part 2* volume.\
+Its purpose remains to extend the **Ehrenberg-Bass empirical laws of
+growth** into new categories and contexts, but it adds updated data,
+global cases, and refined interpretations of “mental” and “physical”
+availability.
+
+------------------------------------------------------------------------
+
+# Overview of the Revision
+
+| Focus area | What’s new or revised | Continuity with earlier edition |
+|:-----------------------|:-----------------------|:-----------------------|
+| **Scope of evidence** | Broader database across 90 + countries, 100 + categories, and thousands of brands, including B2B, luxury, and digital services. | Retains cross-category empirical approach. |
+| **Mental & physical availability** | Expanded treatment; new chapters integrate *distinctive assets*, *category entry points (CEPs)*, and brand *mental networks*. | Builds on original Part 2 discussion of availability; now grounded in Romaniuk’s *Building Distinctive Brand Assets* framework. |
+| **Services & durables** | New empirical work showing the same “laws” hold in high-involvement and infrequent-purchase categories. | Earlier edition discussed these qualitatively. |
+| **Private labels & retailer brands** | Separate analysis of supermarket and online retailers as brands; duplication and double jeopardy hold. | Private-label data previously limited. |
+| **Digital & omnichannel** | First systematic inclusion of online media and e-commerce data; demonstrates that digital channels obey the same reach/penetration logic. | Not covered in 2015/2019. |
+| **Luxury & premium pricing** | Empirical correction: luxury brands still rely on scale and mental availability; loyalty remains low and repertoire buying high. | Conceptually anticipated earlier, now supported by data. |
+| **Emerging markets** | Expanded datasets from Asia, Africa, and Latin America; confirms universality of NBD–Dirichlet patterns. | Earlier edition relied mostly on OECD markets. |
+| **Brand health tracking** | Adds “mental availability metrics” (e.g., % linked to category entry points) as leading indicators of future share. | Earlier edition centred on market-share outcomes. |
+| **Terminology and pedagogy** | Simplified graphics, clearer “laws” language, and teaching examples. | Continuity of empirical tone and reader style. |
+
+------------------------------------------------------------------------
+
+## Updated Structure (approximate correspondence)
+
+| Revised Edition (2023) | Earlier Edition (2015/2019) | Main evolution |
+|:-----------------------|:-----------------------|:-----------------------|
+| **Ch 1–2 The scientific laws of growth** | Introductory chapters | Adds “What makes a law” and updated replication evidence. |
+| **Ch 3 How buyers really buy** | Buying behaviour & loyalty patterns | Adds repertoire graphics and buyer-mix illustrations. |
+| **Ch 4–5 Double jeopardy and duplication of purchase** | Same | Uses expanded 2020s database; now includes private labels. |
+| **Ch 6 Penetration as the driver of growth** | “Penetration, not loyalty” | Same message with fresher longitudinal data. |
+| **Ch 7 Physical availability revisited** | Availability in services & durables | Broader channels (digital, delivery, distribution). |
+| **Ch 8–9 Mental availability and distinctive assets** | Mental availability | Merges Romaniuk’s CEP & asset research into main text. |
+| **Ch 10 Brand extensions and portfolios** | Line extensions | Refines overlap and extension equations (Dirichlet logic). |
+| **Ch 11 Services, B2B, and luxury** | New section | Applies laws beyond FMCG. |
+| **Ch 12 Practical implications for marketers** | Managerial implications | Condensed, data-driven prescriptions. |
+
+------------------------------------------------------------------------
+
+# Core Empirical Laws (unchanged but reinforced)
+
+| Law | Essence | Updated evidence |
+|:-----------------------|:-----------------------|:-----------------------|
+| **1. Double Jeopardy** | Small brands suffer twice—low penetration and slightly less loyalty. | Holds across B2B, luxury, and online contexts. |
+| **2. Duplication of Purchase** | Brands share customers in proportion to market share. | Verified with \> 10,000 duplication matrices. |
+| **3. Natural monopoly of larger brands** | Heavy category buyers buy big brands more often. | Universally replicated. |
+| **4. Penetration drives loyalty** | Loyalty follows penetration mechanically. | Same law; illustrated for infrequent categories. |
+| **5. Mental availability is key** | Memory structures determine probability of choice. | Now operationalised via CEP metrics. |
+| **6. Physical availability multiplies reach** | Distribution breadth × ease of purchase. | Extended to e-commerce & last-mile access. |
+| **7. Distinctive brand assets build mental reach** | Colour, shape, sound cues increase recognition. | Integrated from Romaniuk (2018). |
+| **8. Consistency over creativity** | Repetition and availability outperform differentiation. | Re-emphasised with digital ad data. |
+
+------------------------------------------------------------------------
+
+## Quantitative Underpinnings (unchanged)
+
+The Revised Edition still bases all empirical regularities on the\
+**Negative Binomial–Dirichlet** model:
+
+$$
+P(X_i = x_i) = 
+\int P(x_i \mid \mu, k, \alpha_i)\,f(\mu, k)\,d\mu
+$$
+
+with the same consequences:
+
+-   $D_{ij} \approx s_j$ (duplication),
+-   $p_i \propto s_i$ (penetration–share relationship),
+-   $\text{Overlap}_{ij} \approx s_i + s_j - (1-s_j)^{s_i/s_j}$
+    (extension overlap).
+
+------------------------------------------------------------------------
+
+# Key Additions in Managerial Guidance
+
+| Theme | Revised insight |
+|:-----------------------------------|:-----------------------------------|
+| **Mental availability metrics** | Introduces *Category Entry Points* (CEPs): situations, needs, or occasions linked to the brand. Brand health ≈ % of CEPs mentally associated. |
+| **Distinctive assets** | Empirically scored on fame × uniqueness grid; tracked like distribution. |
+| **Service brands** | “Availability” translated into ease-of-contact, hours, online access, response time. |
+| **Luxury** | Even “exclusive” brands obey the same duplication logic—true differentiation is minimal. |
+| **Digital marketing** | Reach \> engagement; law of buyer heterogeneity still dominates. |
+
+::: {.callout-tip title="Managerial Implications from the Revised Edition"}
+-   **Growth = more buyers**: Loyalty follows penetration; reach remains
+    paramount.\
+-   **Mental + Physical availability** are twin levers: build memory and
+    access.\
+-   **Distinctive assets** act as distribution cues in memory—track and
+    refresh them.\
+-   **Brand portfolios** share customers; overlap is expected, not
+    cannibalisation.\
+-   **The empirical laws are universal**: same patterns hold across
+    price tiers, categories, and nations.
+:::
+
+# The Category Entry Point (CEP) Framework
+
+The Revised Edition translates “mental availability” from a theoretical
+construct into a measurable, trackable system based on **Category Entry
+Points (CEPs)** and **Distinctive Brand Assets (DBAs)**.
+
+------------------------------------------------------------------------
+
+## Conceptual Flow
+
+> **Category Entry Points → Distinctive Assets → Mental Availability →
+> Brand Choice**
+
+1.  **Category Entry Points (CEPs)**\
+    Situations, occasions, needs, or emotions that *trigger* category
+    buying.\
+    Examples:
+
+    -   “I’m hungry at lunchtime.”\
+    -   “I want to celebrate.”\
+    -   “I need a quick caffeine boost.”
+
+2.  **Distinctive Brand Assets (DBAs)**\
+    Perceptual cues—logo, colour, tagline, jingle, packaging, shape—that
+    connect the brand to memory.\
+    DBAs act as *retrieval cues* linking the category entry point to the
+    brand.
+
+3.  **Mental Availability**\
+    The probability that a buyer *thinks of and can find* the brand when
+    a relevant CEP arises.\
+    It depends on how many CEPs the brand is linked to, and how strong
+    those links are.
+
+4.  **Brand Choice Probability**\
+    At the moment of need, the brand with the highest combined mental +
+    physical availability is most likely to be chosen.
+
+------------------------------------------------------------------------
+
+<!-- ### CEP–DBA–Choice Flow Diagram -->
+
+<!-- ```{mermaid} -->
+
+<!-- flowchart TD -->
+
+<!--   A["Category Entry Points:<br/> (occasions, needs)"]  -->
+
+<!--   -->
+
+<!-- B\["Distinctive Brand Assets: <br/> (visual, verbal, sonic cues)"\] --\> -->
+
+<!-- <!--   B -->
+
+<!-- C\["Mental Availability: <br/> (brand salience, memory --\> -->
+<!-- <!-- links)"\] --\> <!--   C --> 
+<!-- D\["Brand Choice Probability: <br/> -->
+<!-- --\> <!-- (purchase likelihood)"\] --\> --> 
+
+<!-- ``` -->
+
+<!-- --- -->
+
+### CEP Measurement Table
+
+| CEP example | \% buyers who associate brand | Distinctive assets that cue it | Relative strength |
+|:-----------------|-----------------:|:-----------------|:-----------------:|
+| “Morning energy” | 45 % | Logo colour, tagline “Kickstart your day” | 🔵 High |
+| “With friends / socialising” | 35 % | Music cue, packaging colour | 🟢 Medium |
+| “After exercise” | 20 % | Bottle shape, sports sponsorship | 🟡 Low |
+| “Relaxation / reward” | 15 % | TV ad visuals, jingle | 🟡 Low |
+
+**Interpretation**
+
+-   The more **CEPs** a brand covers, and the stronger each memory link,
+    the higher its **mental availability**.\
+-   Brands grow by *adding CEPs* (more contexts) and *strengthening
+    links* (better cues), not by deepening loyalty in a narrow set.
+
+------------------------------------------------------------------------
+
+### Distinctive Asset Tracking
+
+Each asset is scored on two axes (Romaniuk, 2018):
+
+| Asset | Fame (% recognition) | Uniqueness (% attribution) | Quadrant | Recommended action |
+|:--------------|--------------:|--------------:|:--------------|:--------------|
+| Logo colour | 90 % | 80 % | 🔵 Strong asset | Maintain and protect |
+| Jingle | 70 % | 40 % | 🟢 Emerging | Reinforce with consistent exposure |
+| Slogan | 85 % | 20 % | 🟡 Over-shared | Refresh or simplify |
+| Mascot | 40 % | 35 % | 🟣 Weak | Re-establish or retire |
+
+These measures allow brands to **track mental availability** just as
+they track **physical distribution**—each asset becomes a *memory
+distribution point*.
+
+------------------------------------------------------------------------
+
+### Integrated Model Summary
+
+| Layer | Key measure | Managerial implication |
+|:-----------------------|:-----------------------|:-----------------------|
+| **Category Entry Points** | \% of buying occasions linked to the brand | Expand repertoire of triggers |
+| **Distinctive Assets** | Fame × Uniqueness index | Refresh and protect distinctive cues |
+| **Mental Availability** | Average retrieval strength across CEPs | Wider mental reach → more buyers |
+| **Physical Availability** | \% of buying occasions where brand can be bought | Ensure ease of purchase |
+| **Brand Choice Probability** | Function of mental × physical availability | Drives penetration and share |
+
+------------------------------------------------------------------------
+
+### Key Takeaways
+
+::: {.callout-tip title="Managerial Insight"}
+-   Build **mental reach** by linking your brand to *many* category
+    entry points.\
+-   Strengthen **distinctive assets** to make those links easy to
+    retrieve.\
+-   Track mental availability as a **distribution metric in memory**,
+    not a soft perception score.\
+-   Brands grow not through “deep loyalty” but through **mental and
+    physical accessibility across more buying situations**.
+:::

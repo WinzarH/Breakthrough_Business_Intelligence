@@ -1,0 +1,418 @@
+---
+title: "How Brands Grow, Part 2"
+author: 
+  - Byron Sharp 
+  - Rob Kennedy
+  - Anne Sharp
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    html-math-method: mathjax
+    mermaid:
+      theme: neutral
+  pdf:
+    toc: true
+    number-sections: true
+    papersize: A4
+    pdf-engine: xelatex
+    mermaid:
+      theme: neutral
+      themeVariables:
+        fontSize: 10 
+    header-includes: |
+      \usepackage[none]{hyphenat}
+      \usepackage{ragged2e}
+      \RaggedRight
+      
+bibliography: references.bib
+link-citations: true
+---
+
+:::::: {layout-ncol="3"}
+::: {.column width="25%"}
+![](images/HowBrandsGrowPart2_cover.jpg){width="25%"}
+:::
+
+::: {.column width="5%"}
+ 
+:::
+
+::: {.column width="70%"}
+Sharp, B., Kennedy, R., & Sharp, A. (2019). *How Brands Grow, Part 2:
+Emerging Markets, Services, Durables, New and Luxury Brands*. Oxford
+University Press.
+
+:::
+::::::
+
+\newpage
+
+# The same laws apply — almost everywhere
+
+*“How Brands Grow, Part 2”* begins with a striking claim: the empirical
+patterns revealed in *How Brands Grow* (2010) are not limited to
+fast-moving consumer goods. They appear in durables, services, new and
+luxury brands, B2B, and emerging markets.
+
+The fundamental insight holds:
+
+-   Brands grow primarily by increasing penetration — the number of
+    category buyers who buy them at least once in a period—rather than
+    by deepening loyalty.
+
+The second volume provides the evidence and qualifications that make
+that claim robust beyond supermarkets.
+
+# Law 1 — Double Jeopardy is universal
+
+Across hundreds of datasets, the familiar Double Jeopardy pattern still
+appears:
+
+| Measure                     | Large brands    | Small brands   |
+|:----------------------------|:----------------|:---------------|
+| Penetration                 | High            | Low            |
+| Average frequency per buyer | Slightly higher | Slightly lower |
+
+Even in airlines, mobile networks, banks, and software subscriptions,
+smaller brands suffer both fewer buyers and slightly weaker loyalty. The
+small brand does not have a tribe of super-fans that compensates for its
+size.
+
+The implication repeats the first book’s logic: if you want to escape
+double jeopardy, you need to reach more people, not invent a
+“relationship strategy.”
+
+# Law 2 — The Duplication of Purchase Law holds across categories
+
+The Duplication of Purchase Law describes how brands share customers. If
+$D_{ij}$ is the proportion of Brand i’s buyers who also bought Brand j,
+
+$$
+D_{ij} \approx \text{market share of Brand j}
+$$
+
+So each brand shares its buyers with others roughly in proportion to
+those others’ size.
+
+In durables, the same logic appears as duplication of ownership or
+overlap of consideration—for example, people who own Toyota also
+consider Ford or Honda in roughly market-share proportion.
+
+Managers sometimes call this “brand repertoires” or “multi-brand
+households.” The law shows that sharing customers is normal, not a sign
+of weakness. It also means: if you grow your market share, you
+automatically grow your overlap with everyone else, which is fine.
+
+# Law 3 — Penetration and purchase frequency scale the same way in services and durables
+
+Services and durables have longer inter-purchase intervals, so
+“frequency” is measured over years, not weeks. But the underlying shape
+of buyer heterogeneity still fits the Negative Binomial Distribution
+(NBD):
+
+$$
+P(X = x) =
+\frac{\Gamma(x + k)}{\Gamma(k)\, x!}
+\left(\frac{k}{k + \mu}\right)^{k}
+\left(\frac{\mu}{k + \mu}\right)^{x},
+\quad x = 0,1,2,\ldots
+$$
+
+Here
+
+$\mu$ is mean purchase rate and\
+$k$ captures heterogeneity.
+
+In durables, most people’s $X = 0$ for several years — exactly what the
+NBD predicts.
+
+Hence the “zero-class problem” (many non-buyers in a period) is not a
+data defect; it’s an expected feature of how buying rates are
+distributed.
+
+# Law 4 — Light buyers dominate, even in subscription or contractual categories
+
+Managers in telecoms, insurance, or software often believe their base is
+stable and heavy. The data show that most customers are occasional,
+churn regularly, and represent the majority of potential growth.
+
+Retention programs tend to benefit existing heavy users but rarely
+change the shape of the NBD. Because attrition and recruitment are
+continuous, a brand that stops recruiting declines—even with good
+retention.
+
+$$
+\text{Net Growth} = \text{New buyers} − \text{Lapsed buyers} 
+$$ Strategic implication: acquisition and retention are two sides of the
+same population churn. You cannot trade one for the other; you must feed
+the pipeline.
+
+# Law 5 — Physical and mental availability still drive penetration
+
+In services and durables, “physical availability” expands beyond shelf
+space:
+
+| Aspect | Examples |
+|:--------------------------|:--------------------------------------------|
+| **Ease of access** | App usability, website loading speed, store hours |
+| **Distribution breadth** | Number of dealerships, delivery coverage |
+| **Service accessibility** | Branch or call-centre availability, local-language support |
+
+Mental availability still means being easily thought of in buying
+situations, but the category cues differ:
+
+-   For durables: *“Which car brands come to mind?”*
+-   For services: *“Which banks could I open an account with?”*
+-   For luxury: *“Which brands fit the occasion or identity?”*
+
+Brands with strong and distinctive memory structures — logos, cues,
+stories — have higher mental availability and, therefore, higher
+penetration. Luxury does not escape this rule; exclusivity works only if
+the brand is still salient.
+
+# Law 6 — Distinctive assets, not abstract differentiation, explain brand identities
+
+*Part 2* provides extended evidence on distinctive brand assets —
+colours, shapes, taglines, characters — that allow buyers to recognise
+and choose the brand quickly. Testing by the Ehrenberg-Bass Institute
+shows that these assets differ in:
+
+-   Uniqueness (how linked to your brand),
+-   Fame (how many category buyers recognise it).
+
+Strong assets have both.
+
+Managers are advised to measure and protect distinctive assets as if
+they were distribution points: they are memory distribution.
+
+A summary table from the Institute’s metrics:
+
+| Asset type   | Example                  | Managerial action                  |
+|:-----------------|:----------------------|:------------------------------|
+| Colour       | Cadbury purple           | Consistent use across media        |
+| Character    | Michelin Man             | Use frequently to build fame       |
+| Shape / pack | Coca-Cola contour bottle | Never abandon distinctive geometry |
+| Sound        | Intel “bong”             | Reinforce through repetition       |
+
+Distinctiveness works because it fuels mental availability in
+low-attention environments.
+
+# Law 7 — Emerging markets follow the same patterns, just compressed
+
+Data from India, China, Indonesia, and Latin America show the same
+statistical laws—Double Jeopardy, Duplication, and NBD — although:
+
+-   Penetrations are lower (distribution still building),
+-   Purchase frequencies shorter (smaller pack sizes, affordability
+    cycles),
+-   Brand sets smaller (limited choice).
+
+As physical and media availability widen, these markets converge toward
+the same mature patterns observed elsewhere.
+
+Hence, marketing “laws” are not Western artefacts; they are behavioural
+regularities arising from human buying patterns.
+
+# Law 8 — Luxury and high-involvement categories obey the same mathematics
+
+Luxury brands seem like exceptions: buyers talk of emotion, identity,
+and status. But when measured, their customer-base metrics follow the
+same shape:
+
+-   Big luxury brands (Rolex, Louis Vuitton) have more buyers,
+-   Their buyers are only slightly more loyal,
+-   Purchase repertoires still exist — people own multiple luxury
+    brands.
+
+The difference is mainly in buying frequency (very low $\mu$) and in
+distribution control (selective physical availability). But once you
+adjust for those, the same equations predict buyer counts and repeat
+rates.
+
+Thus, luxury marketing’s “exclusivity” rhetoric masks the same
+behavioural law: growth still depends on penetration—reaching more
+eligible buyers, even within a narrow elite.
+
+# Law 9 — Innovation and new brands fit the model too
+
+Launch data show that most new brands follow the same trajectory as
+established ones scaled down:
+
+Rapid early trial → flat penetration plateau,
+
+Slight loyalty advantage early on (novelty or promotion) → convergence
+to category norms.
+
+Their penetration decay can be modelled as a special case of the
+NBD–Dirichlet, where initial awareness is low and physical availability
+grows over time.
+
+Mathematically, the expected repeat rate $R$ after first trial relates
+to mean purchase rate $\mu$, and heterogeneity $k$:
+
+$$ 
+R = 1 - \left(\frac{k}{k+\mu}\right)^k 
+$$
+
+As distribution expands, $\mu$ increases, raising both penetration and
+repeat rate mechanically — no new psychology required.
+
+Managerial takeaway: most “launch failures” are distribution failures or
+insufficient reach, not product-love failures.
+
+# Law 10 — Advertising builds mental availability, not persuasion
+
+Part 2 presents further evidence from single-source media-exposure data:
+campaign effects come mainly from refreshing memory structures across
+the whole category, not from converting a narrow segment through
+argument.
+
+Advertising works when it:
+
+1.  Reaches as many category buyers as possible,
+2.  Uses distinctive brand assets consistently,
+3.  Is broad, emotional, and recognisable rather than narrowly targeted
+    or rationally persuasive.
+
+Media fragmentation doesn’t change this.\
+Digital platforms still obey the reach rule: you must be seen, not
+micro-targeted.
+
+# Law 11 — Price and premium positioning follow predictable patterns
+
+Even in premium categories:
+
+-   Larger brands usually have slightly lower average selling prices
+    (they sell in more channels, to more people).
+-   Small niche brands can maintain higher prices only while small.
+
+The Negative Binomial–Dirichlet logic explains this: price sensitivity
+is part of buyer heterogeneity, not a separate segment. As you add more
+buyers, you inevitably recruit more price-sensitive ones, lowering your
+average price — an arithmetic fact, not a failure of “positioning.”
+
+Thus, “premium” is relative, not absolute.\
+You can sustain a premium by controlling physical availability (limiting
+distribution), but not by messaging alone.
+
+# Law 12 — Brand extensions behave predictably
+
+When a brand launches a line extension, its sales typically add to the
+parent’s penetration because many buyers overlap. Duplication analysis
+predicts the cannibalisation rate.
+
+Under Dirichlet assumptions — that is, assuming category buyers vary in
+their underlying buying rates but otherwise buy brands independently and
+in proportion to their popularity — the expected overlap of buyers
+between a parent brand and its extension is roughly
+
+$$
+\text{Expected Overlap} \approx s_i + s_j - (1 - s_j)^{s_i / s_j}
+$$
+
+where
+
+$s_i$ = the parent brand’s share and\
+$s_j$ = the extension’s share
+
+::: {.callout-note title="What the Dirichlet Model Assumes"}
+-   Every buyer has a stable long-term buying rate for the category (as
+    described by the Negative Binomial Distribution).\
+-   Each brand has a constant probability of being chosen on any
+    occasion, proportional to its market share.\
+-   Buying decisions are independent across brands and occasions.\
+-   Differences in loyalty or duplication arise naturally from these
+    random-choice probabilities — not from deep psychological
+    attachment.
+:::
+
+Empirically, about 60–80 % of extension buyers also buy the parent. So
+most extensions expand reach modestly but rarely double the brand’s
+buyer base.
+
+Managerial implication: extensions are safer when they add new physical
+or mental availability cues (new formats, occasions) rather than simply
+replicate the parent.
+
+# The managerial philosophy: build reach and memory, not myths
+
+Throughout *Part 2*, Sharp and colleagues hammer the same scientific
+stance:
+
+| Common belief | Evidence-based reality |
+|:-----------------------------------|:-----------------------------------|
+| “Services, durables, luxury are different.” | The same buying patterns re-emerge once you control for purchase interval. |
+| “Smaller brands have loyal fans.” | Loyalty scales mechanically with size. |
+| “Niche targeting builds efficiency.” | It limits penetration and long-term growth. |
+| “Premiums prove differentiation.” | They mostly reflect limited distribution, not unique psychology. |
+| “Digital breaks the rules.” | Digital is another channel; reach still rules. |
+
+Hence the manager’s task is unchanged:
+
+-   Maintain and expand distribution (physical availability).
+-   Refresh and reinforce memory structures (mental availability).
+-   Use consistent distinctive assets.
+-   Measure success in terms of penetration and share, not subjective
+    *“relationships”*.
+
+# Summary of key quantitative patterns
+
+| Pattern / “Law” | Short description | Mathematical expression (simplified) |
+|:-----------------------|:-----------------------|:-----------------------|
+| Negative Binomial Distribution | Purchase frequency across buyers | $P(X=x) = \frac{\Gamma(x+k)}{\Gamma(k)\,x!}\left(\frac{k}{k+\mu}\right)^k\left(\frac{\mu}{k+\mu}\right)^x$ |
+| Zero-class (non-buyers) | Share of non-buyers in period | $P(0) = \left(\frac{k}{k+\mu}\right)^k$ |
+| Double Jeopardy | Small brands have fewer & slightly less-loyal buyers | Empirical linear relation between penetration and loyalty |
+| Duplication of Purchase | Brand overlaps proportional to market shares | $D_{ij} \approx s_j$ |
+| Penetration vs frequency | Growth via more buyers, not heavier buyers | $\text{Sales} = \text{buyers} \times \text{avg. freq.}$ |
+
+: {.striped .hover}
+
+These formulae are descriptive, not mechanical “laws of physics”, but
+they summarise consistent, cross-category regularities.
+
+# The overall message of Part 2
+
+**Human buying patterns are remarkably stable.**\
+Whether buying chocolate, insurance, cars, or luxury goods, most people
+behave as light, occasional, repertoire buyers.
+
+**Marketing laws scale.**\
+The same NBD–Dirichlet mathematics predict market shares, overlaps, and
+loyalty in categories with radically different frequencies.
+
+**Penetration still dominates.**\
+Even in “special” categories, growth comes from reaching more category
+buyers.
+
+**Mental and physical availability remain the growth levers.**\
+Visibility, accessibility, and distinctiveness determine who buys and
+how often.
+
+**Consistency beats novelty.**\
+The assets that buyers can recall and recognise quickly are the engines
+of growth.
+
+**Evidence trumps intuition.**\
+The book continues the Ehrenberg-Bass mission: to replace untested
+marketing folklore with measurable empirical generalisations.
+
+## Closing thought
+
+If *Part 1* dismantled old myths, *Part 2* universalised the evidence:
+the “laws of growth” apply not only to soap and cereal but to software,
+services, and champagne.
+
+Wherever people choose among alternatives, the same arithmetic of buying
+behaviour governs success:
+
+-   Be easy to think of.
+-   Be easy to buy.
+-   Reach everyone in the category.
+
+That is still how brands grow.
+
+

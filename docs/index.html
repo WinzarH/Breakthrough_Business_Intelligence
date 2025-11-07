@@ -100,6 +100,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./how_brands_grow.html"> 
+<span class="menu-text">How Brands Grow</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -116,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#breakthrough-business-intelligence" id="toc-breakthrough-business-intelligence" class="nav-link active" data-scroll-target="#breakthrough-business-intelligence">Breakthrough Business Intelligence</a></li>
+  <li><a href="#ad-hoc-tools-notes-and-workbooks-to-better-understand-marketing" id="toc-ad-hoc-tools-notes-and-workbooks-to-better-understand-marketing" class="nav-link active" data-scroll-target="#ad-hoc-tools-notes-and-workbooks-to-better-understand-marketing"><em>Ad hoc</em> tools, notes and workbooks to better understand **Marketing</a></li>
   </ul>
 </nav>
     </div>
@@ -142,16 +146,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- This is a Quarto website. -->
-<!-- To learn more about Quarto websites visit -->
-<!-- <https://quarto.org/docs/websites>. -->
-<section id="breakthrough-business-intelligence" class="level1">
-<h1>Breakthrough Business Intelligence</h1>
 <!-- dilini@breakthrough.lk -->
 <!-- jayaweera.suresh@gmail.com -->
+<section id="ad-hoc-tools-notes-and-workbooks-to-better-understand-marketing" class="level2">
+<h2 class="anchored" data-anchor-id="ad-hoc-tools-notes-and-workbooks-to-better-understand-marketing"><em>Ad hoc</em> tools, notes and workbooks to better understand **Marketing</h2>
+<p>Analytics**</p>
+<ul>
+<li><p>Executive summaries of books by Byron Sharp and colleagues</p></li>
+<li><p>Notes on application of the Negative Binomial and Dirichlet (<em>NBM-Dirichlet</em>) models</p></li>
+<li><p>Excel workbooks for exploring and analysing purchase data, and applying <em>NBM-Dirichlet</em> models</p></li>
+</ul>
+<p>by:</p>
+<section id="breakthrough-business-intelligence" class="level4">
+<h4 class="anchored" data-anchor-id="breakthrough-business-intelligence">Breakthrough Business Intelligence</h4>
 <p>Dilini Jayasuriya, Amal Karunaratna, Suresh Jayaweera, and Hume Winzar</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -242,6 +253,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -2,19 +2,26 @@
 title: "Marketing Analytics Tools & Intelligence"
 ---
 
-<!-- This is a Quarto website. -->
 
-<!-- To learn more about Quarto websites visit -->
-<!-- <https://quarto.org/docs/websites>. -->
-
-
-# Breakthrough Business Intelligence
 
 <!-- dilini@breakthrough.lk -->
 
 <!-- jayaweera.suresh@gmail.com -->
 
+## *Ad hoc* tools, notes and workbooks to better understand 
+_Marketing Analytics_
+
+- Executive summaries of books by Byron Sharp and colleagues
+
+- Notes on application of the Negative Binomial and Dirichlet (_NBM-Dirichlet_) models
+
+- Excel workbooks for exploring and analysing purchase data, and applying _NBM-Dirichlet_ models
+
+by:
+
+#### Breakthrough Business Intelligence
 
 Dilini Jayasuriya, Amal Karunaratna, Suresh Jayaweera, and Hume Winzar
+
 
 

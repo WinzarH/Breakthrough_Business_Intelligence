@@ -1,0 +1,429 @@
+---
+title: "How Brands Grow: What Marketers Don’t Know"
+author: "Byron Sharp"
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    html-math-method: mathjax
+  pdf:
+    toc: true
+    number-sections: true
+    papersize: A4
+    pdf-engine: xelatex
+    header-includes: |
+      \usepackage[none]{hyphenat}
+      \usepackage{ragged2e}
+      \RaggedRight
+
+bibliography: references.bib
+link-citations: true
+---
+
+\newpage
+
+:::::: {layout-ncol="3"}
+::: {.column width="25%"}
+![](images/HowBrandsGrow_cover.jpg){width="25%"}
+:::
+
+::: {.column width="5%"}
+ 
+:::
+
+::: {.column width="70%"}
+Sharp, B. (2010).\
+*How Brands Grow: What Marketers Don’t Know*.\
+Oxford University Press.
+:::
+::::::
+
+<!-- ![](HowBrandsGrow_cover.jpg "How Brands Grow cover" width="300" height="450")  -->
+
+Blurb from: [Oxford University
+Press](https://global.oup.com/academic/product/how-brands-grow-9780195573565):
+
+\nopagebreak
+
+> -   This book brings science to marketing with practical findings that
+>     have been replicated, explained and generalised into 'laws' we can
+>     rely on. Until every marketer applies these learnings, there will
+>     be a competitive advantage for those who do.
+>
+> -   Melding logic and science with compelling insight, this books lays
+>     out important principles that every manager should know and apply.
+>
+> -   Employs an exciting evidence based approach to marketing.
+>
+> -   Provides insight for all business professionals about how to
+>     market their brands effectively.
+>
+> -   The author is Director of The Ehrenberg-Bass Institute - the
+>     world's largest centre for research into marketing. The
+>     Institute's research into evidence-based marketing is sponsored by
+>     many of the world's biggest brands.
+
+\newpage
+
+# Marketing works in lawlike, repeatable ways
+
+The core claim of How Brands Grow is that buying behaviour is patterned,
+predictable, and surprisingly similar across categories, countries, and
+time.
+
+Most marketers are taught that categories are special, that brands have
+special relationships with loyal customers, and that growth comes from
+being different, from loyalty programs, from targeting certain “types”
+of consumers with tailored messages. The book directly challenges that.
+
+Sharp argues: brands mostly grow by acquiring more buyers, not by
+squeezing more loyalty from existing ones. This is measurable and
+repeatable across data sets.
+
+So the goal of marketing is not *“to get people to love us more”*. It is
+*“to reach more people, more often, and be easy to buy when they’re in
+market”*.
+
+Everything else follows from that.
+
+# Law 1: Big brands have more buyers. \ (Penetration is the main driver of size.)
+
+When you compare brands in a category, what distinguishes large brands
+from small brands is not that their buyers are rabid superfans. It’s
+that they have many more buyers, even if most of those buyers are light.
+
+In other words, Brand A (large) is not big because its buyers are
+ultra-loyal. It is big because far more people buy it at least once a
+year.
+
+This is called penetration: the percentage of all category buyers who
+buy the brand in a period.
+
+If Brand A has 40% penetration and Brand B has 10% penetration, Brand A
+will virtually always have higher total sales, even if Brand B’s buyers
+buy slightly more often on average. That’s the central empirical
+finding.
+
+Mathematically, total brand sales in a period can be approximated as:
+
+$$
+\text{Total sales} \approx \text{Number of category buyers} \times \text{Penetration} \times \text{Average units per buyer}
+$$
+
+In real markets, the biggest swing term in that product is
+*Penetration.* It just moves a lot more than *Average Units Per Buyer*.
+
+Implication for managers: Growth comes from increasing the number of
+category buyers who buy you at least once, not primarily from trying to
+make your current buyers purchase more often.
+
+# Law 2: Loyalty differences exist, \ but they’re surprisingly small
+
+Marketers often believe “our buyers are more loyal than theirs,” or
+“premium brands have more devoted customers.” The data say: not really.
+Yes, there are differences in loyalty across brands — but they are much,
+much smaller than people assume, and they are largely a mathematical
+side-effect of brand size, not a unique brand “relationship.”
+
+“Loyalty,” in this context, shows up in two practical measures:
+
+-   Purchase frequency: how many times a brand’s customers buy it in a
+    period.
+
+-   Share of requirements: of all purchases a person makes in the
+    category, what fraction goes to that brand.
+
+These do tend to be a bit higher for bigger brands. But only a bit.
+
+That is, large brands don’t just have more customers — they also get
+slightly more of each customer’s repertoire. But the key word is
+“slightly.” You almost never see a niche brand with an ultra-devoted
+captive base that buys it and nothing else. Most buyers are “light and
+polygamous.” They buy multiple brands.
+
+This observation leads to one of the most famous patterns.
+
+# The Double Jeopardy Law
+
+“Double Jeopardy” is a statistical law observed in repeat-purchase
+markets.
+
+It says:
+
+-   Small brands suffer twice.
+
+    -   They have fewer buyers (lower penetration), and also
+
+    -   The buyers they do have are slightly less loyal (they buy less
+        often / split their category spend across other brands more).
+
+-   Large brands benefit twice.
+
+    -   They have more buyers, and also
+
+    -   Those buyers are slightly more loyal.
+
+So it’s not the case that a small brand *“attracts a special kind of
+buyer who’s deeply loyal”*. The opposite is typical: small brands tend
+to have light, occasional, disloyal buyers.
+
+This is important, because many marketing plans are built on the myth
+that *“our brand has a devoted niche”*. For most brands, that niche
+mostly doesn’t exist at scale. The problem is not loyalty. The problem
+is not enough buyers.
+
+Implication for managers: it’s a mistake to diagnose low sales as a
+“loyalty problem.” It is almost always a penetration problem.
+
+# Growth comes from acquiring light buyers –  and there are a lot of them
+
+A key mental shift from the book is this: most of a brand’s customers
+are not heavy users — they’re light or very light users. They buy
+occasionally, they forget you exist between purchases, and they don’t
+think much about you. They’re also the largest pool of potential volume.
+
+When you plot how many times each individual buys in a period, you don’t
+get a neat bell curve. You get a shape where:
+
+-   A small number of people buy very frequently,
+
+-   A very large number buy once or twice,
+
+-   And a very large number buy zero times (non-buyers in the period).
+
+This shape is described by the **Negative Binomial Distribution (NBD)**,
+which reliably fits purchase frequency data in many categories.
+
+We can write the probability that a randomly chosen person buys the
+category exactly $x$ times in a period as:
+
+$$
+P(X = x) =
+\frac{\Gamma(x + k)}{\Gamma(k)\, x!}
+\left(\frac{k}{k + \mu}\right)^{k}
+\left(\frac{\mu}{k + \mu}\right)^{x},
+\quad x = 0,1,2,\ldots
+$$
+
+Here:
+
+$\mu$ = the average number of purchases per person,\
+$k$ = a “dispersion” parameter that captures how variable buying rates
+are across people.
+
+From that distribution, we can get the share of people who don’t buy at
+all in the period:
+
+$$ 
+P(0) = \left(\frac{k}{k+\mu}\right)^k 
+$$
+
+What matters for marketers is what follows from this:
+
+-   Most of the category’s annual buyers are actually very light buyers.
+
+-   Your brand’s buyer base is mostly these light buyers.
+
+-   Losing or gaining a fraction of these light buyers has a huge effect
+    on total sales.
+
+This is completely different from the way marketers talk. Many plans
+obsess over *“top 20% of buyers who drive 80% of the volume”*. That
+story makes sense operationally (focus on whales), but it’s
+strategically misleading, because:
+
+1.  There aren’t enough whales to scale your brand if you only ever talk
+    to them.
+
+2.  Heavy buyers are already heavy — by definition, they have less
+    headroom to grow.
+
+Light buyers are where most growth actually comes from.
+
+# Mental availability: \ Be easily thought of in buying situations
+
+If growth is about increasing penetration — i.e., getting more people to
+buy you at least once — then the main barrier is often not price or
+feature. It’s simply: *“Did they think of you at the moment of buying?”*
+
+Sharp calls this mental availability.
+
+Mental availability is the probability that a category buyer notices,
+recognises, or recalls your brand at the key buying moment. It’s built
+over time by:
+
+-   Reaching large numbers of category buyers,
+
+-   Repeating distinctive brand assets (colours, shapes, taglines,
+    characters, whatever is recognisably *“you”*),
+
+-   Refreshing memory structures so that buyers can retrieve the brand
+    quickly in buying situations.
+
+A brand with high mental availability is *“easy to think of”*. It comes
+to mind in more buying situations (“thirsty?”, “Friday night takeaway?”,
+“planning a holiday?”, *etc.*). And when you are easy to think of, you
+get bought more often by light buyers.
+
+This is a very different definition of *“brand equity”* than the
+classical one about deep, emotional brand love. The book treats memory
+access as practical and observable: do people notice you and think of
+you? Can they link you to the category and occasion?
+
+# Physical availability: Be easy to buy
+
+A second growth lever is physical availability: how easy it is to
+actually buy the brand when someone is willing to.
+
+Physical availability includes:
+
+-   Distribution breadth (how many outlets carry you),
+
+-   Shelf presence (how easy you are to find at the point of purchase),
+
+-   Packaging formats (do you exist in the pack sizes and formats people
+    want),
+
+-   Friction at the moment of transaction (are you in stock, on tap, on
+    the app, on the first screen, in the vending machine, etc.).
+
+Mental availability asks *“will they think of us?”*\
+Physical availability asks *“can they get us right now?”*
+
+Brands grow when both are strong. And the two reinforce each other. You
+become easier to remember as you become easier to buy (familiarity
+effect), and easier to buy as you are more mentally available (people
+ask for you, retailers stock you).
+
+This is a practical media-and-distribution brief:
+
+-   Reach as many category buyers as possible.
+
+-   Be recognisable when you reach them.
+
+-   Be easy to buy when they want you.
+
+It is not about narrowing down to “our most valuable segment.”
+
+# Distinctiveness beats “differentiation”
+
+Traditional positioning theory says: *“You must be meaningfully
+different”*. Sharp’s data-driven view is more cynical: most buyers don’t
+perceive meaningful functional differences between mainstream brands.
+And they don’t need to. They happily rotate.
+
+Instead, what matters is distinctiveness, not deep uniqueness.
+
+Distinctiveness means: being visually and memory-wise easy to identify
+and link to prior exposures. Think McDonald’s golden arches, Tiffany
+blue, or the shape of a Coca-Cola bottle.
+
+Distinctive assets act like mental shortcuts. They let people say *“that
+one”* quickly, with low effort, in cluttered environments. Distinctive
+memory structures support mental availability.
+
+So the question is not *“How are we fundamentally different and
+better?”* It’s *“How do we make it very easy to recognise us, and buy
+us, in real buying contexts?”*
+
+That means:
+
+-   Consistent brand assets,
+-   Consistent naming,
+-   Consistent look and feel,
+-   Consistent cues in advertising.
+
+Marketers often get bored and *“refresh the brand”*. Buyers are not
+bored; buyers are barely paying attention. Consistency is a competitive
+asset because it builds mental availability, which feeds penetration.
+
+# Mass reach beats tight targeting \ (for established brands)
+
+Much conventional marketing emphasises *“targeting high-value segments”*
+or *“focusing on likely switchers”*. Sharp’s argument is: if growth is
+driven by penetration, and penetration comes from getting more light
+buyers and non-buyers to buy you occasionally, then you should be
+talking to all category buyers, not just some niche.
+
+Two reasons:
+
+-   Light buyers and non-buyers are the future buyers.
+-   You can’t perfectly predict who is “in market” next week.
+
+The book recommends broad-reach media that continually refreshes mental
+availability across the whole category. Narrow targeting can absolutely
+make sense in very specific tactical cases (launching into a new
+geography, or B2B with tiny buying pools), but for typical consumer
+categories, over-tight targeting just means “you voluntarily chose not
+to talk to most of the category.” And that sacrifices future
+penetration.
+
+This is where the Ehrenberg-Bass view is blunt: if you don’t reach them,
+you don’t get them.
+
+# Price promotions and loyalty programs
+
+Managers often hope that:
+
+-   Promotions will permanently boost loyalty, or
+
+-   Loyalty programs will turn light buyers into heavy buyers.
+
+-   The evidence in *How Brands Grow* says: no, mostly not.
+
+Promotions can drive short-term spikes, but they tend to borrow from
+future purchases and attract deal-sensitive shoppers who behave that way
+everywhere. They’re not “creating loyalists”; they’re accelerating
+planned buys or shifting brand choice for this one trip.
+
+Loyalty programs often reward existing heavy buyers rather than create
+new ones. That’s comfortable (you see activity; you feel like you’re
+“strengthening the relationship”), but it doesn’t change the structural
+issue: penetration. You’re primarily giving margin away to people who
+already shop you.
+
+The uncomfortable truth is: most loyalty tactics are expensive ways to
+reassure ourselves, not engines of sustainable growth.
+
+# Managerial implications from Part 1
+
+Here’s the most portable version of the book’s message for
+decision-makers:
+
+1.  Brands mostly differ in how many people buy them, not in how “loyal”
+    those people are.
+
+2.  Small brands suffer “double jeopardy”: they have fewer buyers and
+    those buyers are slightly less loyal.
+
+3.  Growth comes from increasing penetration — i.e. getting more
+    category buyers to buy you even once — especially light buyers.
+
+4.  You get penetration by building:
+
+    -   Mental availability: people think of you in buying moments,
+
+    -   Physical availability: people can easily find and buy you.
+
+5.  Distinctive brand assets (visual, verbal, sonic, physical) make you
+    easy to notice and choose quickly. Consistency matters.
+
+6.  Mass reach marketing that continually refreshes memory structures
+    across the whole category is generally more effective, long-term,
+    than narrow segmentation stories about “our core.”
+
+7.  Loyalty programs and over-targeted “relationship” marketing are
+    often comforting distractions that do not change penetration at
+    scale.
+
+In other words:
+
+-   Be easy to notice.
+-   Be easy to buy.
+
+Keep doing that, for everyone in the category.
+
+That’s how brands grow.

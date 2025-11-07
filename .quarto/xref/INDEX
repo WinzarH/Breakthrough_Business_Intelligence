@@ -4,5 +4,22 @@
   },
   "about.qmd": {
     "about.html": "d17d8d29"
+  },
+  "how_brands_grow.qmd": {
+    "how_brands_grow.html": "877e35ff"
+  },
+  "How_Brands_Grow_Part_1.qmd": {
+    "How_Brands_Grow_Part_1.html": "a7f793bf",
+    "How_Brands_Grow_Part_1.tex": "2496cc1b"
+  },
+  "How_Brands_Grow_Part_2.qmd": {
+    "How_Brands_Grow_Part_2.html": "1768bbd1",
+    "How_Brands_Grow_Part_2.tex": "cb04da83"
+  },
+  "How_Brands_Grow_Part_2b.qmd": {
+    "How_Brands_Grow_Part_2b.html": "68e1687f"
+  },
+  "NBD_Dirichlet.qmd": {
+    "NBD_Dirichlet.html": "ccef6afe"
   }
 }
