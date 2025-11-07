@@ -1,14 +1,20 @@
 ---
-title: "Breakthrough Business  Intelligence"
+title: "Marketing Analytics Tools & Intelligence"
 ---
 
-This is a Quarto website.
+<!-- This is a Quarto website. -->
 
-To learn more about Quarto websites visit
-<https://quarto.org/docs/websites>.
+<!-- To learn more about Quarto websites visit -->
+<!-- <https://quarto.org/docs/websites>. -->
 
-```{r}
-1 + 1
-```
 
-This is a draft of my Quarto-based website for Amal, Suresh and Dilini
+# Breakthrough Business Intelligence
+
+<!-- dilini@breakthrough.lk -->
+
+<!-- jayaweera.suresh@gmail.com -->
+
+
+Dilini Jayasuriya, Amal Karunaratna, Suresh Jayaweera, and Hume Winzar
+
+

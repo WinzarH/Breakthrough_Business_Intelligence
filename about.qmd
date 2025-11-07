@@ -1,9 +1,15 @@
 ---
-title: "About"
+title: "About this site"
 ---
 
-About this site
+# About this site
 
-```{r}
-1 + 1
-```
+*Ad hoc* tools, notes and workbooks to better understand **Marketing
+Analytics**
+
+| Created by: |   |
+|------------------------------------|------------------------------------|
+| Dilini Jayasuriya | [![](images/dilini_linkedin.jpeg)](https://www.linkedin.com/in/dilini-jayasuriya-baa17829/) |
+| Amal Karunaratna | [![](images/amal_linkedin.jpeg)](https://www.linkedin.com/in/amal-karunaratna-b3a6aa8/) |
+| Suresh Jayaweer | [![](images/suresh_linkedin.jpeg)](https://www.linkedin.com/in/suresh-jayaweera-938495b/) |
+| Hume Winzar | [![](images/hume_linkedin.jpeg)](https://www.linkedin.com/in/humewinzar/) |
