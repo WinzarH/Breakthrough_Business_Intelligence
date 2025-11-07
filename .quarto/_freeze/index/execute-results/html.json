@@ -1,8 +1,8 @@
 {
-  "hash": "c32fa2259bc4ddfc97a24581f7ccca27",
+  "hash": "bf981bb962fc41b556973bfb67389132",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Breakthrough_Business_Intelligence\"\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit\n<https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\nThis is a draft of my Quarto-based website for Amal, Suresh and Dilini\n",
+    "markdown": "---\ntitle: \"Breakthrough Business  Intelligence\"\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit\n<https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\nThis is a draft of my Quarto-based website for Amal, Suresh and Dilini\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
