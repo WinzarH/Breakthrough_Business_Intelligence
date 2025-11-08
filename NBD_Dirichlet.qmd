@@ -26,7 +26,6 @@ format:
 
 bibliography: references.bib
 link-citations: true
-    
 ---
 
 # Introduction {.unnumbered}
@@ -53,12 +52,44 @@ The combined model is known as the **NBD–Dirichlet model**.
 The Negative Binomial Distribution models the **number of purchases per
 person** in a given period for a whole **product category**.
 
-It assumes:\
-- Each individual has their own average purchase rate, *lambda*, (
-$\lambda_i$ ),\
+It assumes: \
+- Each individual has their own average purchase rate, given by mu,
+( $\mu_i$ ), or lambda, ( $\lambda_i$ ), \
 - Across people, ( $\lambda_i$ ) follows a *Gamma distribution*
-($\Gamma(\cdot)$),\
+($\Gamma(\cdot)$), \
 - Purchases for each individual follow a *Poisson process*.
+
+A *Gamma distribution* ( $\Gamma(\cdot)$ ) looks like this:
+
+![Gamma distributions with varying shape parameters](images/Gamma_distributions.png){fig-alt="three Gamma distributions" fig-align="right" width="400"}
+
+<!-- #### Poisson Distribution -->
+
+A *Poisson distribution* is a probability distribution that describes
+the number of events that occur within a fixed interval of time or
+space. If mu ($\mu$) is the mean occurrence per interval, then the
+probability of having $x$ occurrences within a given interval is:
+
+$$
+P(X=x) = \frac{e^{−\mu} \cdot \mu^{k}}{k!}
+$$
+
+-   $P(X=x)$ represents the probability of observing $x$ events.
+
+-   $e$ is the base of the natural logarithm.
+
+-   $\mu$ *(mu)* is the average rate of event occurrences in a fixed
+    time period.
+
+-   $x$ is the actual number of events observed - integers obviously.
+
+-   $k!$ denotes the factorial of $k$, which is the product of all
+    positive integers up to $k$. That is,
+    ($1 \times 2 \times 3 \times \dots \times k$).
+
+The Poisson density function looks like this:
+
+![Poisson density distribution](images/poisson_distribution.png){fig-align="right" width="400"}
 
 Mixing the two distributions yields the *Negative Binomial*.
 
@@ -194,7 +225,7 @@ This combined model predicts:
 
 \nopagebreak
 
-::: {width=90%}
+::: {width="90%"}
 ```{mermaid}
 %%{init: {'theme': 'neutral', 'flowchart': {'htmlLabels': false}} }%%
 flowchart TD
@@ -316,35 +347,46 @@ purchases are divided across brands.
 
 ### Example: Computing Dirichlet Parameters from Market Shares
 
-Suppose a category has **four brands** with the following observed market shares:
+Suppose a category has **four brands** with the following observed
+market shares:
 
 | Brand | Market Share $s_i$ | Calculation $\alpha_i = \alpha_0 s_i$ | Dirichlet Parameter $\alpha_i$ |
-|:-------------|-------------:|:----------------------:|-------------------:|
+|:----------------|----------------:|:-------------------:|----------------:|
 | A | 0.40 | $20 \times 0.40$ | 8.0 |
 | B | 0.25 | $20 \times 0.25$ | 5.0 |
 | C | 0.20 | $20 \times 0.20$ | 4.0 |
 | D | 0.15 | $20 \times 0.15$ | 3.0 |
 | **Total** | **1.00** |  | $\alpha_0 = 20.0$ |
 
----
+------------------------------------------------------------------------
 
 #### Where does the value 20 come from?
 
-The constant $\alpha_0$ is called the **concentration parameter** (or sometimes the “total precision” or “Dirichlet strength”).  
-It represents how *tightly concentrated* the brand-choice probabilities are around the observed market shares.
+The constant $\alpha_0$ is called the **concentration parameter** (or
+sometimes the “total precision” or “Dirichlet strength”).\
+It represents how *tightly concentrated* the brand-choice probabilities
+are around the observed market shares.
 
-- A **larger $\alpha_0$** means **less variability** across consumers (everyone buys in proportion to market shares).  
-- A **smaller $\alpha_0$** means **more heterogeneity** (some buyers specialise strongly in one brand).
+-   A **larger** $\alpha_0$ means **less variability** across consumers
+    (everyone buys in proportion to market shares).\
+-   A **smaller** $\alpha_0$ means **more heterogeneity** (some buyers
+    specialise strongly in one brand).
 
-The value of $\alpha_0 = 20$ here is **not derived from the shares themselves** — it is either:
+The value of $\alpha_0 = 20$ here is **not derived from the shares
+themselves** — it is either:
 
-1. **Chosen arbitrarily** for illustration (to make the numbers round), or  
-2. **Estimated from category data**, e.g., using observed duplication or repeat-buying rates.
+1.  **Chosen arbitrarily** for illustration (to make the numbers round),
+    or\
+2.  **Estimated from category data**, e.g., using observed duplication
+    or repeat-buying rates.
 
-In practice, researchers often infer $\alpha_0$ by fitting the Dirichlet model to panel data.  
-For example, if the observed duplication of purchase (brand overlap) is high, that implies a **larger $\alpha_0$**; if duplication is low (buyers are more brand-loyal), $\alpha_0$ is smaller.
+In practice, researchers often infer $\alpha_0$ by fitting the Dirichlet
+model to panel data.\
+For example, if the observed duplication of purchase (brand overlap) is
+high, that implies a **larger** $\alpha_0$; if duplication is low
+(buyers are more brand-loyal), $\alpha_0$ is smaller.
 
----
+------------------------------------------------------------------------
 
 ### Step 1 — Compute individual parameters
 
@@ -354,7 +396,7 @@ $$
 \alpha_i = \alpha_0 s_i, \qquad \sum_{i=1}^{4} \alpha_i = \alpha_0 = 20.
 $$
 
----
+------------------------------------------------------------------------
 
 ### Step 2 — Write the Dirichlet PDF
 
@@ -374,44 +416,49 @@ B(8,5,4,3)
 = \frac{\Gamma(8)\,\Gamma(5)\,\Gamma(4)\,\Gamma(3)}{\Gamma(20)}.
 $$
 
----
+------------------------------------------------------------------------
 
 ### Interpretation
 
-This fully specifies the Dirichlet distribution for brand-choice probabilities in this four-brand market.  
+This fully specifies the Dirichlet distribution for brand-choice
+probabilities in this four-brand market.\
 If we were to draw many samples from this distribution:
 
-- The **mean** brand shares would remain $s_i$,
-- But the **variance** and **degree of brand duplication** would depend on the total concentration $\alpha_0$.  
+-   The **mean** brand shares would remain $s_i$,
+-   But the **variance** and **degree of brand duplication** would
+    depend on the total concentration $\alpha_0$.
 
-A smaller $\alpha_0$ (say 5 instead of 20) would produce simulated markets with *more variability* in brand loyalty and purchase overlap.
-
-
+A smaller $\alpha_0$ (say 5 instead of 20) would produce simulated
+markets with *more variability* in brand loyalty and purchase overlap.
 
 ### Distinguishing $\alpha_0$ (Dirichlet) from $k$ (Negative Binomial)
 
-Although both $\alpha_0$ and $k$ describe heterogeneity, they belong to **different parts** of the NBD–Dirichlet model and have **distinct interpretations**:
+Although both $\alpha_0$ and $k$ describe heterogeneity, they belong to
+**different parts** of the NBD–Dirichlet model and have **distinct
+interpretations**:
 
 | Parameter | Model component | Describes variation in… | Interpretation |
-|:--|:--|:--|:--|
-| $k$ | **Negative Binomial (NBD)** | How often different consumers buy within the *category* | A **small $k$** means high variation in category purchase frequency — some people buy often, others rarely. |
-| $\alpha_0$ | **Dirichlet** | How consumers *allocate* their category purchases across brands | A **small $\alpha_0$** means buyers are more brand-focused (less duplication); a **large $\alpha_0$** means buyers spread purchases more evenly. |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| $k$ | **Negative Binomial (NBD)** | How often different consumers buy within the *category* | A **small** $k$ means high variation in category purchase frequency — some people buy often, others rarely. |
+| $\alpha_0$ | **Dirichlet** | How consumers *allocate* their category purchases across brands | A **small** $\alpha_0$ means buyers are more brand-focused (less duplication); a **large** $\alpha_0$ means buyers spread purchases more evenly. |
 
----
+------------------------------------------------------------------------
 
 #### Conceptual summary
 
 | Model stage | Governs heterogeneity in | Key parameter | Example implication |
-|:--|:--|:--|:--|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | **Category purchase frequency** | how many category purchases consumers make | $k$ | Two consumers might make 2 vs 20 category purchases in a period. |
 | **Brand choice behaviour** | which brands those purchases go to | $\alpha_0$ | One consumer may buy almost only Brand A, another spreads across all brands. |
 
----
+------------------------------------------------------------------------
 
 #### Quick intuition
 
-- $k$ shapes the **vertical dimension** — variation in *how many category purchases* people make.  
-- $\alpha_0$ shapes the **horizontal dimension** — variation in *how those purchases are shared across brands*.  
+-   $k$ shapes the **vertical dimension** — variation in *how many
+    category purchases* people make.\
+-   $\alpha_0$ shapes the **horizontal dimension** — variation in *how
+    those purchases are shared across brands*.
 
 Together they define the market’s structure:
 
@@ -422,21 +469,21 @@ $$
 \text{Brand allocation across brands (via } \alpha_0).
 $$
 
----
+------------------------------------------------------------------------
 
 #### In practice
 
 When calibrating an NBD–Dirichlet model:
 
-- $k$ is typically estimated from **category-level repeat rates** or fitted to the category’s purchase frequency distribution.  
-- $\alpha_0$ is estimated from **cross-brand duplication and loyalty** patterns.  
+-   $k$ is typically estimated from **category-level repeat rates** or
+    fitted to the category’s purchase frequency distribution.\
+-   $\alpha_0$ is estimated from **cross-brand duplication and loyalty**
+    patterns.
 
-They are **independent but complementary** — one governs *how often* people buy, the other *what mix* of brands they buy.
+They are **independent but complementary** — one governs *how often*
+people buy, the other *what mix* of brands they buy.
 
-
-
----
-
+------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
@@ -474,7 +521,7 @@ This framework explains:
 -   Differences between large and small brands,
 -   Stable duplication patterns across categories and markets.
 
----
+------------------------------------------------------------------------
 
 ## Visualising $k$ vs $\alpha_0$: Two Kinds of Heterogeneity
 
@@ -504,9 +551,7 @@ flowchart TD
 
 ```
 
-
----
-
+------------------------------------------------------------------------
 
 ### Diagram 2 — “Two-axis” intuition (vertical = $k$, horizontal = $\alpha_0$)
 
@@ -528,20 +573,19 @@ flowchart TD
 
 ```
 
-
----
+------------------------------------------------------------------------
 
 #### Quick recap
 
 | Parameter | Layer | What varies | Lower value implies… | Higher value implies… |
-|:--|:--|:--|:--|:--|
+|:--------------|:--------------|:--------------|:--------------|:--------------|
 | $k$ | NBD (category frequency) | How often people buy the **category** | More dispersion (more light & heavy buyers; higher $P(0)$) | More homogeneity (buyers cluster around the mean) |
 | $\alpha_0$ | Dirichlet (brand allocation) | How purchases are split across **brands** | More brand focus (lower duplication, higher observed loyalty) | More even spread (higher duplication, similar repertoires) |
 
-**Rule of thumb.**  \
-Think **vertical** for $k$ (how many category purchases) and **horizontal** for $\alpha_0$ (how those purchases are shared across brands). 
-They’re **independent but complementary**.
-
+**Rule of thumb.**\
+Think **vertical** for $k$ (how many category purchases) and
+**horizontal** for $\alpha_0$ (how those purchases are shared across
+brands). They’re **independent but complementary**.
 
 ------------------------------------------------------------------------
 
@@ -549,16 +593,19 @@ They’re **independent but complementary**.
 
 # Understanding "Penetration" in the Dirichlet Model
 
-The term **penetration** can mean two very different things in marketing.  
-In the **Dirichlet model**, it refers to **buyer penetration** — not retail or distribution penetration.
+The term **penetration** can mean two very different things in
+marketing.\
+In the **Dirichlet model**, it refers to **buyer penetration** — not
+retail or distribution penetration.
 
----
+------------------------------------------------------------------------
 
 ## Buyer Penetration (Dirichlet definition)
 
 In the NBD–Dirichlet framework, *penetration* is:
 
-> **The proportion of all category buyers who purchased the brand at least once during the period.**
+> **The proportion of all category buyers who purchased the brand at
+> least once during the period.**
 
 Formally:
 
@@ -566,12 +613,13 @@ $$
 p_i = \frac{\text{Number of category buyers who bought brand } i}{\text{Total number of category buyers}}
 $$
 
-It describes **how many people bought**, not how many times they bought, and not how many stores stock the brand.
+It describes **how many people bought**, not how many times they bought,
+and not how many stores stock the brand.
 
 ### Example
 
-If 10,000 people bought chocolate bars this year and  
-7,000 of them bought *KitKat* at least once,  
+If 10,000 people bought chocolate bars this year and\
+7,000 of them bought *KitKat* at least once,\
 then KitKat’s **penetration** = 70%.
 
 Penetration is a key driver in the Dirichlet system because:
@@ -580,62 +628,71 @@ $$
 \text{Market share} \approx p_i \times \text{Average purchase rate (among buyers)}
 $$
 
-So, brands grow mainly by **gaining more buyers**, not by dramatically increasing loyalty or purchase frequency.
+So, brands grow mainly by **gaining more buyers**, not by dramatically
+increasing loyalty or purchase frequency.
 
----
+------------------------------------------------------------------------
 
 ## Retail or Numeric Penetration (Physical Availability)
 
-In retail metrics, *penetration* (also called *numeric distribution*) means something else:
+In retail metrics, *penetration* (also called *numeric distribution*)
+means something else:
 
-> **The proportion of retail outlets that stock the brand at least once during a period.**
+> **The proportion of retail outlets that stock the brand at least once
+> during a period.**
 
 $$
 \text{Retail penetration} =
 \frac{\text{Number of stores carrying the brand}}{\text{Total stores selling the category}}
 $$
 
-This is a **supply-side** measure of *physical availability*, not a consumer behaviour measure.
+This is a **supply-side** measure of *physical availability*, not a
+consumer behaviour measure.
 
----
+------------------------------------------------------------------------
 
 ## How the Two Meanings Relate
 
 | Concept | What it measures | Data source | Used in the Dirichlet model? |
-|:--|:--|:--|:--|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | **Buyer penetration** | \% of category buyers who purchased the brand | Consumer panel or survey | ✅ Yes |
 | **Retail penetration** | \% of outlets stocking the brand | Retail audit or scanner data | ❌ No |
 
-Retail penetration enables buyer penetration — a brand must be available in stores before consumers can buy it — but the Dirichlet model itself only uses **buyer penetration** to explain market-level patterns such as market share, duplication of purchase, and loyalty.
+Retail penetration enables buyer penetration — a brand must be available
+in stores before consumers can buy it — but the Dirichlet model itself
+only uses **buyer penetration** to explain market-level patterns such as
+market share, duplication of purchase, and loyalty.
 
----
+------------------------------------------------------------------------
 
 ## Summary
 
 | Term | In plain English | In Dirichlet modelling |
-|:--|:--|:--|
+|:-----------------------|:-----------------------|:-----------------------|
 | **Buyer penetration** | \% of people who bought the brand | Core input/output |
 | **Retail penetration** | \% of stores that stock the brand | External driver |
 | **Market share** | \% of category volume sold by the brand | Derived outcome |
 
-In short:  
+In short:
 
-- **Retail penetration** reflects *availability*;  
-- **buyer penetration** reflects *actual buying*.  
+-   **Retail penetration** reflects *availability*;\
+-   **buyer penetration** reflects *actual buying*.
 
-The Dirichlet model focuses on the latter — the behaviour of people, not stores.
+The Dirichlet model focuses on the latter — the behaviour of people, not
+stores.
 
 \newpage
 
 # Common Misunderstandings about the Dirichlet Model
 
-Even bright business students sometimes confuse the Dirichlet model with psychological or managerial theories of consumer behaviour.  
-The table below highlights some typical misconceptions and the correct interpretations.
-
+Even bright business students sometimes confuse the Dirichlet model with
+psychological or managerial theories of consumer behaviour.\
+The table below highlights some typical misconceptions and the correct
+interpretations.
 
 | Misunderstanding | Clarification |
-|:--|:--|
-| **1. “Penetration means how many stores stock the brand.”** | In the Dirichlet model, penetration refers to **buyers**, not stores — the \% of people who bought the brand at least once in a given period. <br/> Retail distribution is a separate measure of *physical availability*. |
+|:-----------------------------------|:-----------------------------------|
+| **1. “Penetration means how many stores stock the brand.”** | In the Dirichlet model, penetration refers to **buyers**, not stores — the % of people who bought the brand at least once in a given period. <br/> Retail distribution is a separate measure of *physical availability*. |
 | **2. “Loyalty drives market share.”** | It’s the opposite: **market share (penetration)** largely determines observed loyalty. <br/> Larger brands have slightly higher repeat rates simply because they have more buyers, not because their buyers are intrinsically more loyal. |
 | **3. “People are assumed to buy at random, so advertising doesn’t matter.”** | The model assumes statistical independence, not *psychological randomness*. <br/> Advertising, distinctive assets, and availability all influence the *probabilities* of brand choice — they shift the parameters ($s_i$, $p_i$). |
 | **4. “If the laws always hold, marketing research is pointless.”** | The laws describe *expected patterns*, not tactical details. <br/> Research helps diagnose *deviations* (e.g., low penetration vs share, weak duplication) and guides execution — such as which category entry points to strengthen. |
@@ -644,103 +701,121 @@ The table below highlights some typical misconceptions and the correct interpret
 | **7. “Categories with subscriptions or infrequent purchases break the model.”** | The same patterns emerge when analysed over an appropriate time frame (e.g., contract renewal cycles, multi-year purchases). <br/> Purchase opportunities differ, but the underlying heterogeneity logic remains valid. |
 | **8. “Dirichlet models only apply to groceries.”** | The empirical laws hold across **services, durables, B2B, and luxury** — anywhere people have repeat or substitute buying opportunities. |
 
-
----
+------------------------------------------------------------------------
 
 ## Key Reminder
 
 ::: {.callout-note title="How to Think About the Dirichlet"}
-The Dirichlet model doesn’t explain *why* people buy — it describes *how* buyers collectively behave in steady-state markets.  
+The Dirichlet model doesn’t explain *why* people buy — it describes
+*how* buyers collectively behave in steady-state markets.
 
-Its purpose is descriptive, predictive, and diagnostic, not psychological.  
+Its purpose is descriptive, predictive, and diagnostic, not
+psychological.
 
-Use it to test whether brand data fit expected norms, and to identify genuine marketing anomalies.
+Use it to test whether brand data fit expected norms, and to identify
+genuine marketing anomalies.
 :::
 
----
+------------------------------------------------------------------------
 
 # Modelling the Effects of Mental Availability in the NBD Framework
 
-An increase in **mental availability** — for example, after an effective advertising campaign — can be represented within the **Negative Binomial Distribution (NBD)** model as a change in a brand’s *probability of being chosen*.  
+An increase in **mental availability** — for example, after an effective
+advertising campaign — can be represented within the **Negative Binomial
+Distribution (NBD)** model as a change in a brand’s *probability of
+being chosen*.
 
-In the combined **NBD–Dirichlet system**, mental availability affects the **Dirichlet layer** (how purchases are divided among brands), but its observable effects appear through the **NBD layer**, which predicts buyer penetration and purchase frequency.
+In the combined **NBD–Dirichlet system**, mental availability affects
+the **Dirichlet layer** (how purchases are divided among brands), but
+its observable effects appear through the **NBD layer**, which predicts
+buyer penetration and purchase frequency.
 
----
+------------------------------------------------------------------------
 
 ## Where Mental Availability Fits
 
 | Model layer | Describes | Key parameters | Connection to marketing |
-|:--|:--|:--|:--|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | **NBD (Negative Binomial)** | Variation in category buying frequency across consumers | $\mu, k$ | Category buying patterns |
 | **Dirichlet** | Allocation of those purchases across brands | $s_i$ (brand share of buying occasions) | Brand mental & physical availability |
 
-When advertising improves a brand’s *mental availability*, it increases its probability of being chosen at each buying occasion — captured by $s_i$.
+When advertising improves a brand’s *mental availability*, it increases
+its probability of being chosen at each buying occasion — captured by
+$s_i$.
 
----
+------------------------------------------------------------------------
 
 ## How the NBD Predicts Penetration
 
-In the NBD model, the probability of a consumer making **zero** purchases of a given brand in the period is:
+In the NBD model, the probability of a consumer making **zero**
+purchases of a given brand in the period is:
 
 $$
 P(0) = \left(\frac{k}{k + s_i \mu}\right)^k
 $$
 
-Therefore, the **buyer penetration** (probability of at least one purchase) is:
+Therefore, the **buyer penetration** (probability of at least one
+purchase) is:
 
 $$
 \text{Penetration} = 1 - P(0)
 $$
 
-An increase in $s_i$ — due to higher brand salience or mental availability — reduces $P(0)$, meaning **more category buyers now buy the brand**.
+An increase in $s_i$ — due to higher brand salience or mental
+availability — reduces $P(0)$, meaning **more category buyers now buy
+the brand**.
 
----
+------------------------------------------------------------------------
 
-##  What Information the Model Needs
+## What Information the Model Needs
 
 | Parameter | Description | Typical data source |
-|:--|:--|:--|
+|:-----------------------|:-----------------------|:-----------------------|
 | $\mu$ | Average number of category purchases per buyer per period | Panel data or market totals |
 | $k$ | Dispersion parameter (heterogeneity of buying rates) | Estimated from category data |
 | $s_i$ | Brand’s share of category purchase occasions | Market share or assumed change |
 | $N$ | Total number of category buyers | Sets the base for buyer counts |
 | $\Delta s_i$ | Change in share due to mental availability increase | Estimated effect of advertising |
 
----
+------------------------------------------------------------------------
 
-##  Example: Simulating a Mental Availability Lift
+## Example: Simulating a Mental Availability Lift
 
 | Parameter | Before campaign | After campaign | Comment |
-|:--|--:|--:|:--|
+|:-----------------|-----------------:|-----------------:|:-----------------|
 | Category mean purchases (μ) | 6.0 | 6.0 | Category constant |
 | Dispersion ($k$) | 2.0 | 2.0 | Stable heterogeneity |
 | Brand share ($s_i$) | 0.20 | 0.25 | Mental availability ↑ 25% |
 | $P(0) = \left(\frac{k}{k + s_i \mu}\right)^k$ | 0.56 | 0.46 | Fewer non-buyers |
-| **Penetration ($1 – P(0)$)** | **0.44** | **0.54** | Buyer base ↑ 10 points |
+| **Penetration (**$1 – P(0)$) | **0.44** | **0.54** | Buyer base ↑ 10 points |
 | Expected share | 20% | 25% | Matches assumed lift |
 
-An increase in *mental availability* (here, a 25% increase in recall or consideration) translates into:
+An increase in *mental availability* (here, a 25% increase in recall or
+consideration) translates into:
 
-- noticeably higher **penetration**, and  
-- a proportional lift in **market share** — exactly as predicted by *How Brands Grow*.
+-   noticeably higher **penetration**, and\
+-   a proportional lift in **market share** — exactly as predicted by
+    *How Brands Grow*.
 
----
+------------------------------------------------------------------------
 
-##  Summary Interpretation
+## Summary Interpretation
 
 | Concept | Direction of effect | Marketing meaning |
-|:--|:--|:--|
+|:---|:---|:---|
 | ↑ Mental availability | ↑ $s_i$ | More likely to be chosen |
 | ↑ $s_i$ | ↓ $P(0)$ | Fewer non-buyers → higher penetration |
 | ↑ Penetration | ↑ Market share | Growth through more buyers |
 
-In short: **Advertising and distinctive assets expand mental availability**, which mathematically increases a brand’s choice probability $s_i$.  
+In short: **Advertising and distinctive assets expand mental
+availability**, which mathematically increases a brand’s choice
+probability $s_i$.
 
-Through the NBD, this produces measurable gains in buyer penetration and market share, even when the category’s total purchasing rate (μ) and heterogeneity (k) remain constant.
+Through the NBD, this produces measurable gains in buyer penetration and
+market share, even when the category’s total purchasing rate (μ) and
+heterogeneity (k) remain constant.
 
-
-
----
+------------------------------------------------------------------------
 
 \newpage
 
@@ -895,27 +970,23 @@ That’s the full engine under *How Brands Grow*.
 
 \nopagebreak
 
--   Sharp, B. (2010).
-    *How Brands Grow: What Marketers Don’t Know*.
-    Oxford University Press.
-    ISBN 9780195573565
-    https://doi.org/10.1093/oso/9780195573565.001.0001 \
--   Sharp, B., Kennedy, R., & Sharp, A. (2019).
-    *How Brands Grow, Part 2: Emerging Markets, Services, Durables, New and Luxury Brands*.
-    Oxford University Press.
-    ISBN 9780195596267
-    https://doi.org/10.1093/oso/9780195596267.001.0001 \
--   Sharp, B., Wright, M., & Goodhardt, G. J. (2002).
-    Purchase loyalty is polarised, how brand loyalty differs by customer size.
+-   Sharp, B. (2010). *How Brands Grow: What Marketers Don’t Know*.
+    Oxford University Press. ISBN 9780195573565
+    https://doi.org/10.1093/oso/9780195573565.001.0001\
+-   Sharp, B., Kennedy, R., & Sharp, A. (2019). *How Brands Grow, Part
+    2: Emerging Markets, Services, Durables, New and Luxury Brands*.
+    Oxford University Press. ISBN 9780195596267
+    https://doi.org/10.1093/oso/9780195596267.001.0001\
+-   Sharp, B., Wright, M., & Goodhardt, G. J. (2002). Purchase loyalty
+    is polarised, how brand loyalty differs by customer size.
     *Australasian Marketing Journal (AMJ)*, 10(3), 7–20.
-    https://doi.org/10.1016/S1441-3582(02)70138-5 \
+    https://doi.org/10.1016/S1441-3582(02)70138-5\
 -   Ehrenberg, A. S. C., Uncles, M. D., & Goodhardt, G. J. (2004).
-    Understanding brand performance measures: Using Dirichlet distributions.
-    *Journal of Business Research*, 57(12), 1307–1325.
-    https://doi.org/10.1016/S0148-2963(03)00041-1 \
--   Goodhardt, G. J., Ehrenberg, A. S. C., & Chatfield, C. (1984).  
-    The Dirichlet: A comprehensive model of buying behaviour.  
-    *Journal of the Royal Statistical Society. Series A (General)*, 
-    147(5), 621–655.  
+    Understanding brand performance measures: Using Dirichlet
+    distributions. *Journal of Business Research*, 57(12), 1307–1325.
+    https://doi.org/10.1016/S0148-2963(03)00041-1\
+-   Goodhardt, G. J., Ehrenberg, A. S. C., & Chatfield, C. (1984).\
+    The Dirichlet: A comprehensive model of buying behaviour.\
+    *Journal of the Royal Statistical Society. Series A (General)*,
+    147(5), 621–655.\
     https://doi.org/10.2307/2981578
-

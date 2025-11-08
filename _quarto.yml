@@ -12,6 +12,8 @@ website:
         text: About
       - href: how_brands_grow.qmd
         text: How Brands Grow
+      - href: NBD_Dirichlet.qmd
+        text: NBD_Dirichlet_model
 
 format:
   html:

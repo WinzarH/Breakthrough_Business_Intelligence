@@ -132,7 +132,15 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About this site</span></a>
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./how_brands_grow.html"> 
+<span class="menu-text">How Brands Grow</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./NBD_Dirichlet.html" aria-current="page"> 
+<span class="menu-text">NBD_Dirichlet_model</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -258,9 +266,35 @@ They underpin the analyses presented in <em>How Brands Grow</em> (Sharp, 2010) a
 <h1 data-number="1"><span class="header-section-number">1</span> Purchase Incidence — The Negative Binomial Distribution</h1>
 <p>The Negative Binomial Distribution models the <strong>number of purchases per person</strong> in a given period for a whole <strong>product category</strong>.</p>
 <p>It assumes:<br>
-- Each individual has their own average purchase rate, <em>lambda</em>, ( <span class="math inline">\(\lambda_i\)</span> ),<br>
+- Each individual has their own average purchase rate, given by mu, ( <span class="math inline">\(\mu_i\)</span> ), or lambda, ( <span class="math inline">\(\lambda_i\)</span> ),<br>
 - Across people, ( <span class="math inline">\(\lambda_i\)</span> ) follows a <em>Gamma distribution</em> (<span class="math inline">\(\Gamma(\cdot)\)</span>),<br>
 - Purchases for each individual follow a <em>Poisson process</em>.</p>
+<p>A <em>Gamma distribution</em> ( <span class="math inline">\(\Gamma(\cdot)\)</span> ) looks like this:</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="images/Gamma_distributions.png" class="img-fluid figure-img" alt="three Gamma distributions" width="400"></p>
+<figcaption>Gamma distributions with varying shape parameters</figcaption>
+</figure>
+</div>
+<!-- #### Poisson Distribution -->
+<p>A <em>Poisson distribution</em> is a probability distribution that describes the number of events that occur within a fixed interval of time or space. If mu (<span class="math inline">\(\mu\)</span>) is the mean occurrence per interval, then the probability of having <span class="math inline">\(x\)</span> occurrences within a given interval is:</p>
+<p><span class="math display">\[
+P(X=x) = \frac{e^{−\mu} \cdot \mu^{k}}{k!}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(P(X=x)\)</span> represents the probability of observing <span class="math inline">\(x\)</span> events.</p></li>
+<li><p><span class="math inline">\(e\)</span> is the base of the natural logarithm.</p></li>
+<li><p><span class="math inline">\(\mu\)</span> <em>(mu)</em> is the average rate of event occurrences in a fixed time period.</p></li>
+<li><p><span class="math inline">\(x\)</span> is the actual number of events observed - integers obviously.</p></li>
+<li><p><span class="math inline">\(k!\)</span> denotes the factorial of <span class="math inline">\(k\)</span>, which is the product of all positive integers up to <span class="math inline">\(k\)</span>. That is, (<span class="math inline">\(1 \times 2 \times 3 \times \dots \times k\)</span>).</p></li>
+</ul>
+<p>The Poisson density function looks like this:</p>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="images/poisson_distribution.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Poisson density distribution</figcaption>
+</figure>
+</div>
 <p>Mixing the two distributions yields the <em>Negative Binomial</em>.</p>
 <section id="formula" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="formula"><span class="header-section-number">1.1</span> Formula</h2>
@@ -576,10 +610,10 @@ P(0) = \left(\frac{k}{k+\mu}\right)^k
 <p>Suppose a category has <strong>four brands</strong> with the following observed market shares:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 33%">
-<col style="width: 27%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 29%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -628,9 +662,9 @@ P(0) = \left(\frac{k}{k+\mu}\right)^k
 <p>The constant <span class="math inline">\(\alpha_0\)</span> is called the <strong>concentration parameter</strong> (or sometimes the “total precision” or “Dirichlet strength”).<br>
 It represents how <em>tightly concentrated</em> the brand-choice probabilities are around the observed market shares.</p>
 <ul>
-<li>A <strong>larger <span class="math inline">\(\alpha_0\)</span></strong> means <strong>less variability</strong> across consumers (everyone buys in proportion to market shares).<br>
+<li>A <strong>larger</strong> <span class="math inline">\(\alpha_0\)</span> means <strong>less variability</strong> across consumers (everyone buys in proportion to market shares).<br>
 </li>
-<li>A <strong>smaller <span class="math inline">\(\alpha_0\)</span></strong> means <strong>more heterogeneity</strong> (some buyers specialise strongly in one brand).</li>
+<li>A <strong>smaller</strong> <span class="math inline">\(\alpha_0\)</span> means <strong>more heterogeneity</strong> (some buyers specialise strongly in one brand).</li>
 </ul>
 <p>The value of <span class="math inline">\(\alpha_0 = 20\)</span> here is <strong>not derived from the shares themselves</strong> — it is either:</p>
 <ol type="1">
@@ -639,7 +673,7 @@ It represents how <em>tightly concentrated</em> the brand-choice probabilities a
 <li><strong>Estimated from category data</strong>, e.g., using observed duplication or repeat-buying rates.</li>
 </ol>
 <p>In practice, researchers often infer <span class="math inline">\(\alpha_0\)</span> by fitting the Dirichlet model to panel data.<br>
-For example, if the observed duplication of purchase (brand overlap) is high, that implies a <strong>larger <span class="math inline">\(\alpha_0\)</span></strong>; if duplication is low (buyers are more brand-loyal), <span class="math inline">\(\alpha_0\)</span> is smaller.</p>
+For example, if the observed duplication of purchase (brand overlap) is high, that implies a <strong>larger</strong> <span class="math inline">\(\alpha_0\)</span>; if duplication is low (buyers are more brand-loyal), <span class="math inline">\(\alpha_0\)</span> is smaller.</p>
 <hr>
 </section>
 </section>
@@ -701,13 +735,13 @@ If we were to draw many samples from this distribution:</p>
 <td style="text-align: left;"><span class="math inline">\(k\)</span></td>
 <td style="text-align: left;"><strong>Negative Binomial (NBD)</strong></td>
 <td style="text-align: left;">How often different consumers buy within the <em>category</em></td>
-<td style="text-align: left;">A <strong>small <span class="math inline">\(k\)</span></strong> means high variation in category purchase frequency — some people buy often, others rarely.</td>
+<td style="text-align: left;">A <strong>small</strong> <span class="math inline">\(k\)</span> means high variation in category purchase frequency — some people buy often, others rarely.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\alpha_0\)</span></td>
 <td style="text-align: left;"><strong>Dirichlet</strong></td>
 <td style="text-align: left;">How consumers <em>allocate</em> their category purchases across brands</td>
-<td style="text-align: left;">A <strong>small <span class="math inline">\(\alpha_0\)</span></strong> means buyers are more brand-focused (less duplication); a <strong>large <span class="math inline">\(\alpha_0\)</span></strong> means buyers spread purchases more evenly.</td>
+<td style="text-align: left;">A <strong>small</strong> <span class="math inline">\(\alpha_0\)</span> means buyers are more brand-focused (less duplication); a <strong>large</strong> <span class="math inline">\(\alpha_0\)</span> means buyers spread purchases more evenly.</td>
 </tr>
 </tbody>
 </table>
@@ -1278,7 +1312,7 @@ P(0) = \left(\frac{k}{k + s_i \mu}\right)^k
 <td style="text-align: left;">Fewer non-buyers</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Penetration (<span class="math inline">\(1 – P(0)\)</span>)</strong></td>
+<td style="text-align: left;"><strong>Penetration (</strong><span class="math inline">\(1 – P(0)\)</span>)</td>
 <td style="text-align: right;"><strong>0.44</strong></td>
 <td style="text-align: right;"><strong>0.54</strong></td>
 <td style="text-align: left;">Buyer base ↑ 10 points</td>
