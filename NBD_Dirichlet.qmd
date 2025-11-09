@@ -89,11 +89,17 @@ $$
 
 The Poisson density function looks like this:
 
+\nopagebreak
+
 ![Poisson density distribution](images/poisson_distribution.png){fig-align="right" width="400"}
 
-Mixing the two distributions yields the *Negative Binomial*.
+\nopagebreak
 
-## Formula
+_(We use line charts here for ease of viewing three Poisson distributions: Ordinarily, we would use bar-charts to show integer values on the x-axis. We can't have "half an event")_
+
+Mixing the _Gamma_ and _Poisson_ distributions yields the _Negative Binomial_.
+
+## Negative Binomial Formula
 
 \nopagebreak
 
@@ -164,8 +170,8 @@ $$
 
 \nopagebreak
 
-Once we know how often people buy the category, we can model *which
-brand* they buy.
+Once we know how often people buy the category, we can model 
+_which brand_ they buy.
 
 The **Dirichlet distribution** models how individuals allocate their
 purchases across brands.
@@ -187,6 +193,8 @@ and across consumers these follow a Dirichlet distribution:
 $$ 
 (p_1, \dots, p_m)  \sim  \text{Dirichlet}(\alpha_1, \dots, \alpha_m)
 $$
+
+
 
 Combining the NBD (purchase incidence) with the Dirichlet (brand choice)
 gives the **NBD–Dirichlet model**.
@@ -256,8 +264,8 @@ Key insights:
     repeat-purchase rates.
 -   **Small brands** have *fewer buyers* (high $P(0)$) and slightly
     lower repeat-purchase rates.
--   Buyer behaviour differences largely reflect **market share and
-    penetration**, not deep attitudinal differences.
+-   Buyer behaviour differences largely reflect 
+    **market share and penetration**, not deep attitudinal differences.
 
 These principles explain two major empirical “laws” of marketing:
 
@@ -685,7 +693,7 @@ stores.
 
 # Common Misunderstandings about the Dirichlet Model
 
-Even bright business students sometimes confuse the Dirichlet model with
+Users sometimes confuse the Dirichlet model with
 psychological or managerial theories of consumer behaviour.\
 The table below highlights some typical misconceptions and the correct
 interpretations.
@@ -851,9 +859,13 @@ Its **probability density function (PDF)** is:
 $$
 f(p_1, \dots, p_m;\, \alpha_1, \dots, \alpha_m)
 = \frac{1}{B(\alpha_1, \dots, \alpha_m)}
-\prod_{i=1}^m p_i^{\alpha_i - 1},
-\quad \text{where } \sum_{i=1}^m p_i = 1, \; p_i > 0
+\prod_{i=1}^m p_i^{\alpha_i - 1}
+
+\\
+
+\text{where } \quad \sum_{i=1}^m p_i = 1, \quad  p_i > 0
 $$
+
 
 and the **normalising constant** $B(\cdot)$ (the multivariate Beta
 function) is:
