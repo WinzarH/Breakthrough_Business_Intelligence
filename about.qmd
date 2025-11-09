@@ -4,16 +4,15 @@ title: "About this site"
 
 <!-- # About this site -->
 
-## *Ad hoc* tools, notes and workbooks to better understand 
-*Marketing Analytics*
+## *Ad hoc* tools, notes and workbooks to better understand *Marketing Analytics*
 
-- Executive summaries of books by Byron Sharp and colleagues
+-   Executive summaries of books by Byron Sharp and colleagues
 
-- Notes on application of the Negative Binomial and Dirichlet (_NBM-Dirichlet_) models
+-   Notes on application of the Negative Binomial and Dirichlet
+    (*NBM-Dirichlet*) models
 
-- Excel workbooks for exploring and analysing purchase data, and applying _NBM-Dirichlet_ models
-
-
+-   Excel workbooks for exploring and analysing purchase data, and
+    applying *NBM-Dirichlet* models
 
 | Created by: |   |
 |------------------------------------|------------------------------------|
@@ -21,5 +20,3 @@ title: "About this site"
 | Amal Karunaratna | [![](images/amal_linkedin.jpeg){width="100"}](https://www.linkedin.com/in/amal-karunaratna-b3a6aa8/) |
 | Suresh Jayaweer | [![](images/suresh_linkedin.jpeg){width="100"}](https://www.linkedin.com/in/suresh-jayaweera-938495b/) |
 | Hume Winzar | [![](images/hume_linkedin.jpeg){width="100"}](https://www.linkedin.com/in/humewinzar/) |
-
-

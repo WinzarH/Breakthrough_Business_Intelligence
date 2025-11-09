@@ -191,7 +191,7 @@ and across consumers these follow a Dirichlet distribution:
 \nopagebreak
 
 $$ 
-(p_1, \dots, p_m)  \sim  \text{Dirichlet}(\alpha_1, \dots, \alpha_m)
+(p_1, \dots, p_m)  \sim  \text{ Dirichlet }( \alpha_1, \dots, \alpha_m )
 $$
 
 
@@ -850,20 +850,24 @@ $(x_1, x_2, \dots, x_m)$ with $\sum_{i=1}^m x_i = x$, then:
 
 $$
 P(x_1, \dots, x_m \mid p_1, \dots, p_m, x)
-= \frac{x!}{\prod_{i=1}^m x_i!}
-\prod_{i=1}^m p_i^{x_i}.
+= \frac{ x! }{ \prod_{ i=1 }^m x_i!}
+\prod_{ i=1 }^m p_i^{ x_i }.
 $$
 
 Its **probability density function (PDF)** is:
 
 $$
-f(p_1, \dots, p_m;\, \alpha_1, \dots, \alpha_m)
-= \frac{1}{B(\alpha_1, \dots, \alpha_m)}
-\prod_{i=1}^m p_i^{\alpha_i - 1}
+\quad 
+f(p_1 , \dots , p_m \mid  \, \alpha_1, \dots, \alpha_m)
+= \frac{ 1 }{ B( \alpha_1 , \dots , \alpha_m)}
+\prod_{ i=1 }^m p_i^{ \alpha_i - 1 } 
+\quad 
 
 \\
 
-\text{where } \quad \sum_{i=1}^m p_i = 1, \quad  p_i > 0
+\quad 
+\text{where } \quad \sum_{ i=1 }^m p_i = 1, \quad  p_i > 0
+\quad 
 $$
 
 
@@ -871,9 +875,9 @@ and the **normalising constant** $B(\cdot)$ (the multivariate Beta
 function) is:
 
 $$
-B(\alpha_1, \dots, \alpha_m)
-= \frac{\prod_{i=1}^m \Gamma(\alpha_i)}
-{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}.
+B( \alpha_1, \dots, \alpha_m )
+= \frac{ \prod_{i=1}^m \Gamma( \alpha_i )}
+{ \Gamma \! \left ( \sum_{i=1}^m \alpha_i \right) }
 $$
 
 where:
@@ -924,29 +928,30 @@ We now have two layers:
     The total category purchase count $X$ for a shopper follows a
     Negative Binomial with parameters $(\mu, k)$:
 
-  $$
-  P(X = x) =
-  \frac{\Gamma(x + k)}{\Gamma(k)\, x!}
-  \left(\frac{k}{k + \mu}\right)^k
-  \left(\frac{\mu}{k + \mu}\right)^x,
-  \quad x = 0,1,2,\ldots
-  $$
+ $$
+ P(X = x) =
+ \frac{\Gamma(x + k)}{\Gamma(k)\, x!}
+ \left(\frac{k}{k + \mu}\right)^k
+ \left(\frac{\mu}{k + \mu}\right)^x,
+ \quad x = 0,1,2,\ldots
+ $$
 
 2.  **How are those** $x$ purchases allocated across brands?\
     Conditional on $X = x$, the vector of brand-level counts
     $(x_1, \dots, x_m)$ with $\sum_i x_i = x$ follows a
     Dirichlet–multinomial with parameters $(\alpha_1, \dots, \alpha_m)$:
 
-   $$
-   P(x_1, \dots, x_m \mid X = x)
-   =
-   \frac{x!}{\prod_{i=1}^m x_i!}
-   \,
-   \frac{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}
-        {\Gamma\!\left(x + \sum_{i=1}^m \alpha_i\right)}
-   \prod_{i=1}^m
-   \frac{\Gamma(x_i + \alpha_i)}{\Gamma(\alpha_i)}.
-   $$
+ $$
+ P(x_1, \dots, x_m \mid X = x)
+ =
+ \frac{x!}{\prod_{i=1}^m x_i!}
+ \cdot
+ \frac{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}
+     {\Gamma\!\left(x + \sum_{i=1}^m \alpha_i\right)}
+ \cdot
+ \prod_{i=1}^m
+ \frac{\Gamma(x_i + \alpha_i)}{\Gamma(\alpha_i)}.
+ $$
 
 The full **NBD–Dirichlet model** is the hierarchical combination:
 
