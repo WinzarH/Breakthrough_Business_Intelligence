@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.29)  9 NOV 2025 13:01
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.9)  9 NOV 2025 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **NBD_Dirichlet.tex
 (./NBD_Dirichlet.tex
-LaTeX2e <2025-06-01> patch level 1
+LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
 (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2025/09/09 v3.48 KOMA-Script document class (article)
@@ -124,7 +124,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 274.
 (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2025/09/29 v5.0o Graphics/color driver for xetex
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -141,7 +141,7 @@ File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2024/09/29 v3.02 Predefined colors according to Unix/X11 (UK)
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/06/16 v2.17y AMS math features
+Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip65
 For additional information on amsmath, use the `?' option.
 (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -201,8 +201,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \multlinegap=\skip66
 \multlinetaggap=\skip67
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2949.
-LaTeX Info: Redefining \] on input line 2950.
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -248,7 +248,7 @@ Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_tmpb_dim=\dimen159
 \l__fontspec_tmpc_dim=\dimen160
 (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
@@ -454,7 +454,7 @@ File: microtype.cfg 2025/07/09 v3.2b microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip69
 \LTright=\skip70
 \LTpre=\skip71
@@ -493,7 +493,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count320
 \@thisrulewidth=\dimen175
 ) (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen176
 \ar@mcellbox=\box63
 \extrarowheight=\dimen177
@@ -1270,44 +1270,25 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.47441pt on input line 226.
 File: images/Gamma_distributions.png Graphic file (type bmp)
 <images/Gamma_distributions.png>
-
-
 [1
 
 
 ]
 File: images/poisson_distribution.png Graphic file (type bmp)
 <images/poisson_distribution.png>
-
-
-[2]
-
-[3]
-
-[4]
+[2] [3] [4]
 File: NBD_Dirichlet_files/figure-latex/mermaid-figure-1.png Graphic file (type bmp)
 <NBD_Dirichlet_files/figure-latex/mermaid-figure-1.png>
-
-
-[5]
-
-[6]
+[5] [6]
 Underfull \hbox (badness 1132) in paragraph at lines 548--550
 []\TU/lmr/m/n/10.95 This pattern arises naturally from the NBD–Dirichlet model and is not a sign of 
  []
 
-
-
-[7]
-
-[8]
-
-[9] [10]
+[7] [8] [9]
+ignored error: Infinite glue shrinkage found in box being split [10]
 Overfull \hbox (35.06308pt too wide) detected at line 841
 [] [][][]   []   [][][][][]
  []
-
-
 
 [11]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -1335,8 +1316,6 @@ Overfull \hbox (100.35495pt too wide) in paragraph at lines 930--931
 []  
  []
 
-
-
 [12]
 File: NBD_Dirichlet_files/figure-latex/mermaid-figure-2.png Graphic file (type bmp)
 <NBD_Dirichlet_files/figure-latex/mermaid-figure-2.png>
@@ -1345,22 +1324,11 @@ Overfull \hbox (43.97025pt too wide) in paragraph at lines 938--939
 []  
  []
 
-
-
-[13]
-
-[14]
-
-[15]
-
-[16]
+[13] [14] [15] [16]
 Missing character: There is no ✅ (U+2705) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ❌ (U+274C) in font [lmroman10-regular]:mapping=tex-text;!
-
-
-[17]
-
-[18] [19] (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-TU-empty.cfg
+[17] [18]
+ignored error: Infinite glue shrinkage found in box being split [19] (c:/Users/winza/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-TU-empty.cfg
 File: mt-TU-empty.cfg 2021/06/22 v1.1 microtype config. file: fonts with nonstandard glyph set (RS)
 )
 Underfull \hbox (badness 10000) in paragraph at lines 1190--1192
@@ -1372,18 +1340,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1196--1198
 []\TU/lmr/m/n/10.95 Use it to test whether brand data fit expected norms, and to identify genuine
  []
 
-
-
-[20] [21]
+[20]
+ignored error: Infinite glue shrinkage found in box being split [21]
 Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 17 on input line 1367.
 
-[22]
+ignored error: Infinite glue shrinkage found in box being split [22]
 Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
-
-
 [23]
 Missing character: There is no 𝛼 (U+1D6FC) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no 𝛼 (U+1D6FC) in font [lmroman10-regular]:mapping=tex-text;!
@@ -1397,10 +1362,10 @@ you left one out. Proceed, with fingers crossed.
 
  
 Here is how much of TeX's memory you used:
- 38959 strings out of 470343
- 810074 string characters out of 5482435
- 1501102 words of memory out of 5000000
- 66786 multiletter control sequences out of 15000+600000
+ 38970 strings out of 470134
+ 810193 string characters out of 5475040
+ 1504589 words of memory out of 5000000
+ 67005 multiletter control sequences out of 15000+600000
  637066 words of font info for 111 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  108i,9n,114p,11235b,958s stack positions out of 10000i,1000n,20000p,200000b,200000s

@@ -791,7 +791,7 @@ the brand**.
 
 | Parameter | Before campaign | After campaign | Comment |
 |:-----------------|-----------------:|-----------------:|:-----------------|
-| Category mean purchases (μ) | 6.0 | 6.0 | Category constant |
+| Category mean purchases ($\mu$) | 6.0 | 6.0 | Category constant |
 | Dispersion ($k$) | 2.0 | 2.0 | Stable heterogeneity |
 | Brand share ($s_i$) | 0.20 | 0.25 | Mental availability ↑ 25% |
 | $P(0) = \left(\frac{k}{k + s_i \mu}\right)^k$ | 0.56 | 0.46 | Fewer non-buyers |
@@ -910,8 +910,8 @@ Key points:
 
 This distribution gives the probability of observing a particular
 “basket split” across brands, for a given total number of purchases $x$,
-**without needing to know that shopper’s individual loyalties
-explicitly**. The $\alpha_i$ encode typical brand attractiveness /
+**without needing to know that shopper’s individual loyalties explicitly**. 
+The $\alpha_i$ encode typical brand attractiveness /
 repertoire weights at the population level.
 
 ------------------------------------------------------------------------
@@ -924,29 +924,29 @@ We now have two layers:
     The total category purchase count $X$ for a shopper follows a
     Negative Binomial with parameters $(\mu, k)$:
 
-    $$
-    P(X = x) =
-    \frac{\Gamma(x + k)}{\Gamma(k)\, x!}
-    \left(\frac{k}{k + \mu}\right)^k
-    \left(\frac{\mu}{k + \mu}\right)^x,
-    \quad x = 0,1,2,\ldots
-    $$
+  $$
+  P(X = x) =
+  \frac{\Gamma(x + k)}{\Gamma(k)\, x!}
+  \left(\frac{k}{k + \mu}\right)^k
+  \left(\frac{\mu}{k + \mu}\right)^x,
+  \quad x = 0,1,2,\ldots
+  $$
 
 2.  **How are those** $x$ purchases allocated across brands?\
     Conditional on $X = x$, the vector of brand-level counts
     $(x_1, \dots, x_m)$ with $\sum_i x_i = x$ follows a
     Dirichlet–multinomial with parameters $(\alpha_1, \dots, \alpha_m)$:
 
-    $$
-    P(x_1, \dots, x_m \mid X = x)
-    =
-    \frac{x!}{\prod_{i=1}^m x_i!}
-    \,
-    \frac{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}
-         {\Gamma\!\left(x + \sum_{i=1}^m \alpha_i\right)}
-    \prod_{i=1}^m
-    \frac{\Gamma(x_i + \alpha_i)}{\Gamma(\alpha_i)}.
-    $$
+   $$
+   P(x_1, \dots, x_m \mid X = x)
+   =
+   \frac{x!}{\prod_{i=1}^m x_i!}
+   \,
+   \frac{\Gamma\!\left(\sum_{i=1}^m \alpha_i\right)}
+        {\Gamma\!\left(x + \sum_{i=1}^m \alpha_i\right)}
+   \prod_{i=1}^m
+   \frac{\Gamma(x_i + \alpha_i)}{\Gamma(\alpha_i)}.
+   $$
 
 The full **NBD–Dirichlet model** is the hierarchical combination:
 
