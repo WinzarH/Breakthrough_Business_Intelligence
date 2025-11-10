@@ -3,7 +3,7 @@ project:
   output-dir: docs 
 
 website:
-  title: "Breakthrough_Business_Intelligence"
+  title: "Breakthrough Business Intelligence"
   navbar:
     left:
       - href: index.qmd
@@ -13,7 +13,9 @@ website:
       - href: how_brands_grow.qmd
         text: How Brands Grow
       - href: NBD_Dirichlet.qmd
-        text: NBD_Dirichlet_model
+        text: NBD Dirichlet model
+      - href: workbooks.qmd
+        text: Workbooks
 
 format:
   html:
