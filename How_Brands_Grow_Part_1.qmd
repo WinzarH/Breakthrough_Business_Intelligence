@@ -89,7 +89,7 @@ market”*.
 
 Everything else follows from that.
 
-# Law 1: Big brands have more buyers. \ (Penetration is the main driver of size.)
+# Law 1: Big brands have more buyers.  (Penetration is the main driver of size.)
 
 When you compare brands in a category, what distinguishes large brands
 from small brands is not that their buyers are rabid superfans. It’s
@@ -120,7 +120,7 @@ Implication for managers: Growth comes from increasing the number of
 category buyers who buy you at least once, not primarily from trying to
 make your current buyers purchase more often.
 
-# Law 2: Loyalty differences exist, \ but they’re surprisingly small
+# Law 2: Loyalty differences exist,  but they’re surprisingly small
 
 Marketers often believe “our buyers are more loyal than theirs,” or
 “premium brands have more devoted customers.” The data say: not really.
@@ -243,7 +243,7 @@ strategically misleading, because:
 
 Light buyers are where most growth actually comes from.
 
-# Mental availability: \ Be easily thought of in buying situations
+# Mental availability:  Be easily thought of in buying situations
 
 If growth is about increasing penetration — i.e., getting more people to
 buy you at least once — then the main barrier is often not price or
@@ -340,7 +340,7 @@ Marketers often get bored and *“refresh the brand”*. Buyers are not
 bored; buyers are barely paying attention. Consistency is a competitive
 asset because it builds mental availability, which feeds penetration.
 
-# Mass reach beats tight targeting \ (for established brands)
+# Mass reach beats tight targeting  (for established brands)
 
 Much conventional marketing emphasises *“targeting high-value segments”*
 or *“focusing on likely switchers”*. Sharp’s argument is: if growth is

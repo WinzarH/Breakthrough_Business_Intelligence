@@ -841,7 +841,7 @@ $$
 $$
 
 then conditional on those probabilities, the shopper’s actual purchase
-*realizations* across brands in a period follow a **multinomial**
+*realisations* across brands in a period follow a **multinomial**
 distribution.
 
 That is, if the shopper makes $x$ total purchases in the category in the
@@ -857,19 +857,19 @@ $$
 Its **probability density function (PDF)** is:
 
 $$
-\quad 
 f(p_1 , \dots , p_m \mid  \, \alpha_1, \dots, \alpha_m)
 = \frac{ 1 }{ B( \alpha_1 , \dots , \alpha_m)}
 \prod_{ i=1 }^m p_i^{ \alpha_i - 1 } 
-\quad 
-
-\\
-
-\quad 
-\text{where } \quad \sum_{ i=1 }^m p_i = 1, \quad  p_i > 0
-\quad 
 $$
 
+where:
+
+-   $\quad \sum_{ i=1 }^m p_i = 1$
+-   $\quad p_i > 0$
+
+<!-- $$ -->
+<!-- \text{where } \quad \sum_{ i=1 }^m p_i = 1, \quad  p_i > 0 -->
+<!-- $$ -->
 
 and the **normalising constant** $B(\cdot)$ (the multivariate Beta
 function) is:
