@@ -52,16 +52,18 @@ The combined model is known as the **NBD–Dirichlet model**.
 The Negative Binomial Distribution models the **number of purchases per
 person** in a given period for a whole **product category**.
 
-It assumes: \
-- Each individual has their own average purchase rate, given by mu,
-( $\mu_i$ ), or lambda, ( $\lambda_i$ ), \
+It assumes:\
+- Each individual has their own average purchase rate, given by mu, (
+$\mu_i$ ), or lambda, ( $\lambda_i$ ),\
 - Across people, ( $\lambda_i$ ) follows a *Gamma distribution*
-($\Gamma(\cdot)$), \
+($\Gamma(\cdot)$),\
 - Purchases for each individual follow a *Poisson process*.
 
 A *Gamma distribution* ( $\Gamma(\cdot)$ ) looks like this:
 
-![Gamma distributions with varying shape parameters](images/Gamma_distributions.png){fig-alt="three Gamma distributions" fig-align="right" width="400"}
+![Gamma distributions with varying shape
+parameters](images/Gamma_distributions.png){fig-alt="three Gamma distributions"
+fig-align="right" width="400"}
 
 <!-- #### Poisson Distribution -->
 
@@ -91,13 +93,18 @@ The Poisson density function looks like this:
 
 \nopagebreak
 
-![Poisson density distribution](images/poisson_distribution.png){fig-align="right" width="400"}
+![Poisson density
+distribution](images/poisson_distribution.png){fig-align="right"
+width="400"}
 
 \nopagebreak
 
-_(We use line charts here for ease of viewing three Poisson distributions: Ordinarily, we would use bar-charts to show integer values on the x-axis. We can't have "half an event")_
+*(We use line charts here for ease of viewing three Poisson
+distributions: Ordinarily, we would use bar-charts to show integer
+values on the x-axis. We can't have "half an event")*
 
-Mixing the _Gamma_ and _Poisson_ distributions yields the _Negative Binomial_.
+Mixing the *Gamma* and *Poisson* distributions yields the *Negative
+Binomial*.
 
 ## Negative Binomial Formula
 
@@ -157,7 +164,7 @@ $$
 \nopagebreak
 
 | Concept | Interpretation |
-|:---------------------------|:-------------------------------------------|
+|:---|:---|
 | $P(0)$ | Proportion of people who make no purchases |
 | $1 - P(0)$ | Proportion of people who make at least one purchase |
 | $k$ | Degree of heterogeneity — smaller ($k$) means greater variability |
@@ -170,8 +177,8 @@ $$
 
 \nopagebreak
 
-Once we know how often people buy the category, we can model 
-_which brand_ they buy.
+Once we know how often people buy the category, we can model *which
+brand* they buy.
 
 The **Dirichlet distribution** models how individuals allocate their
 purchases across brands.
@@ -194,8 +201,6 @@ $$
 (p_1, \dots, p_m)  \sim  \text{ Dirichlet }( \alpha_1, \dots, \alpha_m )
 $$
 
-
-
 Combining the NBD (purchase incidence) with the Dirichlet (brand choice)
 gives the **NBD–Dirichlet model**.
 
@@ -215,7 +220,7 @@ This combined model predicts:
 \nopagebreak
 
 | Concept | Source | Description |
-|:------------------|:------------------|:---------------------------------|
+|:---|:---|:---|
 | $\mu$ | NBD | Mean category purchase rate per person |
 | $k$ | NBD | Dispersion (heterogeneity) parameter |
 | $P(0)$ | NBD | Probability of zero category purchases |
@@ -264,8 +269,8 @@ Key insights:
     repeat-purchase rates.
 -   **Small brands** have *fewer buyers* (high $P(0)$) and slightly
     lower repeat-purchase rates.
--   Buyer behaviour differences largely reflect 
-    **market share and penetration**, not deep attitudinal differences.
+-   Buyer behaviour differences largely reflect **market share and
+    penetration**, not deep attitudinal differences.
 
 These principles explain two major empirical “laws” of marketing:
 
@@ -359,7 +364,7 @@ Suppose a category has **four brands** with the following observed
 market shares:
 
 | Brand | Market Share $s_i$ | Calculation $\alpha_i = \alpha_0 s_i$ | Dirichlet Parameter $\alpha_i$ |
-|:----------------|----------------:|:-------------------:|----------------:|
+|:---|---:|:--:|---:|
 | A | 0.40 | $20 \times 0.40$ | 8.0 |
 | B | 0.25 | $20 \times 0.25$ | 5.0 |
 | C | 0.20 | $20 \times 0.20$ | 4.0 |
@@ -446,7 +451,7 @@ Although both $\alpha_0$ and $k$ describe heterogeneity, they belong to
 interpretations**:
 
 | Parameter | Model component | Describes variation in… | Interpretation |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | $k$ | **Negative Binomial (NBD)** | How often different consumers buy within the *category* | A **small** $k$ means high variation in category purchase frequency — some people buy often, others rarely. |
 | $\alpha_0$ | **Dirichlet** | How consumers *allocate* their category purchases across brands | A **small** $\alpha_0$ means buyers are more brand-focused (less duplication); a **large** $\alpha_0$ means buyers spread purchases more evenly. |
 
@@ -455,7 +460,7 @@ interpretations**:
 #### Conceptual summary
 
 | Model stage | Governs heterogeneity in | Key parameter | Example implication |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **Category purchase frequency** | how many category purchases consumers make | $k$ | Two consumers might make 2 vs 20 category purchases in a period. |
 | **Brand choice behaviour** | which brands those purchases go to | $\alpha_0$ | One consumer may buy almost only Brand A, another spreads across all brands. |
 
@@ -500,7 +505,7 @@ people buy, the other *what mix* of brands they buy.
 \nopagebreak
 
 | Parameter  | Typical Range | Interpretation                                    |
-|:-------------------|:------------------------|:--------------------------|
+|:-----------|:--------------|:--------------------------------------------------|
 | $\mu$      | 0.5 – 2.0     | Mean number of category purchases per person      |
 | $k$        | 0.3 – 2.0     | Dispersion (heterogeneity)  smaller → more skewed |
 | $P(0)$     | 0.5 – 0.9     | Proportion of category non-buyers                 |
@@ -586,7 +591,7 @@ flowchart TD
 #### Quick recap
 
 | Parameter | Layer | What varies | Lower value implies… | Higher value implies… |
-|:--------------|:--------------|:--------------|:--------------|:--------------|
+|:---|:---|:---|:---|:---|
 | $k$ | NBD (category frequency) | How often people buy the **category** | More dispersion (more light & heavy buyers; higher $P(0)$) | More homogeneity (buyers cluster around the mean) |
 | $\alpha_0$ | Dirichlet (brand allocation) | How purchases are split across **brands** | More brand focus (lower duplication, higher observed loyalty) | More even spread (higher duplication, similar repertoires) |
 
@@ -662,7 +667,7 @@ consumer behaviour measure.
 ## How the Two Meanings Relate
 
 | Concept | What it measures | Data source | Used in the Dirichlet model? |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **Buyer penetration** | \% of category buyers who purchased the brand | Consumer panel or survey | ✅ Yes |
 | **Retail penetration** | \% of outlets stocking the brand | Retail audit or scanner data | ❌ No |
 
@@ -676,7 +681,7 @@ market share, duplication of purchase, and loyalty.
 ## Summary
 
 | Term | In plain English | In Dirichlet modelling |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **Buyer penetration** | \% of people who bought the brand | Core input/output |
 | **Retail penetration** | \% of stores that stock the brand | External driver |
 | **Market share** | \% of category volume sold by the brand | Derived outcome |
@@ -693,13 +698,13 @@ stores.
 
 # Common Misunderstandings about the Dirichlet Model
 
-Users sometimes confuse the Dirichlet model with
-psychological or managerial theories of consumer behaviour.\
+Users sometimes confuse the Dirichlet model with psychological or
+managerial theories of consumer behaviour.\
 The table below highlights some typical misconceptions and the correct
 interpretations.
 
 | Misunderstanding | Clarification |
-|:-----------------------------------|:-----------------------------------|
+|:---|:---|
 | **1. “Penetration means how many stores stock the brand.”** | In the Dirichlet model, penetration refers to **buyers**, not stores — the % of people who bought the brand at least once in a given period. <br/> Retail distribution is a separate measure of *physical availability*. |
 | **2. “Loyalty drives market share.”** | It’s the opposite: **market share (penetration)** largely determines observed loyalty. <br/> Larger brands have slightly higher repeat rates simply because they have more buyers, not because their buyers are intrinsically more loyal. |
 | **3. “People are assumed to buy at random, so advertising doesn’t matter.”** | The model assumes statistical independence, not *psychological randomness*. <br/> Advertising, distinctive assets, and availability all influence the *probabilities* of brand choice — they shift the parameters ($s_i$, $p_i$). |
@@ -743,7 +748,7 @@ buyer penetration and purchase frequency.
 ## Where Mental Availability Fits
 
 | Model layer | Describes | Key parameters | Connection to marketing |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | **NBD (Negative Binomial)** | Variation in category buying frequency across consumers | $\mu, k$ | Category buying patterns |
 | **Dirichlet** | Allocation of those purchases across brands | $s_i$ (brand share of buying occasions) | Brand mental & physical availability |
 
@@ -778,7 +783,7 @@ the brand**.
 ## What Information the Model Needs
 
 | Parameter | Description | Typical data source |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | $\mu$ | Average number of category purchases per buyer per period | Panel data or market totals |
 | $k$ | Dispersion parameter (heterogeneity of buying rates) | Estimated from category data |
 | $s_i$ | Brand’s share of category purchase occasions | Market share or assumed change |
@@ -790,7 +795,7 @@ the brand**.
 ## Example: Simulating a Mental Availability Lift
 
 | Parameter | Before campaign | After campaign | Comment |
-|:-----------------|-----------------:|-----------------:|:-----------------|
+|:---|---:|---:|:---|
 | Category mean purchases ($\mu$) | 6.0 | 6.0 | Category constant |
 | Dispersion ($k$) | 2.0 | 2.0 | Stable heterogeneity |
 | Brand share ($s_i$) | 0.20 | 0.25 | Mental availability ↑ 25% |
@@ -868,7 +873,9 @@ where:
 -   $\quad p_i > 0$
 
 <!-- $$ -->
+
 <!-- \text{where } \quad \sum_{ i=1 }^m p_i = 1, \quad  p_i > 0 -->
+
 <!-- $$ -->
 
 and the **normalising constant** $B(\cdot)$ (the multivariate Beta
@@ -914,8 +921,8 @@ Key points:
 
 This distribution gives the probability of observing a particular
 “basket split” across brands, for a given total number of purchases $x$,
-**without needing to know that shopper’s individual loyalties explicitly**. 
-The $\alpha_i$ encode typical brand attractiveness /
+**without needing to know that shopper’s individual loyalties
+explicitly**. The $\alpha_i$ encode typical brand attractiveness /
 repertoire weights at the population level.
 
 ------------------------------------------------------------------------
@@ -928,7 +935,7 @@ We now have two layers:
     The total category purchase count $X$ for a shopper follows a
     Negative Binomial with parameters $(\mu, k)$:
 
- $$
+$$
  P(X = x) =
  \frac{\Gamma(x + k)}{\Gamma(k)\, x!}
  \left(\frac{k}{k + \mu}\right)^k
@@ -941,7 +948,7 @@ We now have two layers:
     $(x_1, \dots, x_m)$ with $\sum_i x_i = x$ follows a
     Dirichlet–multinomial with parameters $(\alpha_1, \dots, \alpha_m)$:
 
- $$
+$$
  P(x_1, \dots, x_m \mid X = x)
  =
  \frac{x!}{\prod_{i=1}^m x_i!}

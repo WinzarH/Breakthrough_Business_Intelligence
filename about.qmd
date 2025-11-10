@@ -15,7 +15,7 @@ title: "About this site"
     applying *NBM-Dirichlet* models
 
 | Created by: |   |
-|------------------------------------|------------------------------------|
+|----|----|
 | Dilini Jayasuriya | [![](images/dilini_linkedin.jpeg){width="100"}](https://www.linkedin.com/in/dilini-jayasuriya-baa17829/) |
 | Amal Karunaratna | [![](images/amal_linkedin.jpeg){width="100"}](https://www.linkedin.com/in/amal-karunaratna-b3a6aa8/) |
 | Suresh Jayaweer | [![](images/suresh_linkedin.jpeg){width="100"}](https://www.linkedin.com/in/suresh-jayaweera-938495b/) |

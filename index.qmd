@@ -9,7 +9,9 @@ title: "Marketing Analytics Tools & Intelligence"
 <!-- jayaweera.suresh@gmail.com -->
 
 
+![Accelerated growth through insight](images/breakthroughbi_logo.jpeg)
 
+ 
 
 ## *Ad hoc* tools, notes and workbooks to better understand 
 _Marketing Analytics_
@@ -25,8 +27,6 @@ _Marketing Analytics_
 - Excel workbooks for exploring and analysing purchase data, and applying _NBM-Dirichlet_ models
 
 by:
-
-#### Breakthrough Business Intelligence
 
 Dilini Jayasuriya, Amal Karunaratna, Suresh Jayaweera, and Hume Winzar
 

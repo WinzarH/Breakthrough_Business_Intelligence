@@ -11,9 +11,8 @@ Australia
 
 [![](images/marketingInsight_100x100.png)](https://marketingscience.info/)
 
-
-|     |     |
-|-----|-----|
-| [Sharp, B. (2010). *How Brands Grow: What Marketers Don’t Know*](How_Brands_Grow_Part_1.qmd)  | [![](images/HowBrandsGrow_cover.jpg){alt="Sharp, B. (2010)"width="100"}](How_Brands_Grow_Part_1.qmd)   |
-| [Sharp, B., Kennedy, R., & Sharp, A. (2019). *How Brands Grow, Part 2: Emerging Markets, Services, Durables, New and Luxury Brands*](How_Brands_Grow_Part_2.qmd)       | [![](images/HowBrandsGrowPart2_cover.jpg){alt="Sharp, Kennedy & Sharp (2019)" width="100"}](How_Brands_Grow_Part_2.qmd)   |
-| [Romaniuk, J., & Sharp. (2023). *How Brands Grow: Part 2 (Revised Edition)*](How_Brands_Grow_Part_2b.qmd)      |  [![](images/HowBrandsGrowPart2_cover.jpg){alt="Romaniuk & Sharp (2023)" width="100"}](How_Brands_Grow_Part_2b.qmd) |   
+|  |  |
+|----|----|
+| [Sharp, B. (2010). *How Brands Grow: What Marketers Don’t Know*](How_Brands_Grow_Part_1.qmd) | [![](images/HowBrandsGrow_cover.jpg){alt="Sharp, B. (2010)" width="100"}](How_Brands_Grow_Part_1.qmd) |
+| [Sharp, B., Kennedy, R., & Sharp, A. (2019). *How Brands Grow, Part 2: Emerging Markets, Services, Durables, New and Luxury Brands*](How_Brands_Grow_Part_2.qmd) | [![](images/HowBrandsGrowPart2_cover.jpg){alt="Sharp, Kennedy & Sharp (2019)" width="100"}](How_Brands_Grow_Part_2.qmd) |
+| [Romaniuk, J., & Sharp. (2023). *How Brands Grow: Part 2 (Revised Edition)*](How_Brands_Grow_Part_2b.qmd) | [![](images/HowBrandsGrowPart2_cover.jpg){alt="Romaniuk & Sharp (2023)" width="100"}](How_Brands_Grow_Part_2b.qmd) |

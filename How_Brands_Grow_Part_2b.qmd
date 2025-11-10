@@ -63,7 +63,7 @@ availability.
 # Overview of the Revision
 
 | Focus area | What’s new or revised | Continuity with earlier edition |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **Scope of evidence** | Broader database across 90 + countries, 100 + categories, and thousands of brands, including B2B, luxury, and digital services. | Retains cross-category empirical approach. |
 | **Mental & physical availability** | Expanded treatment; new chapters integrate *distinctive assets*, *category entry points (CEPs)*, and brand *mental networks*. | Builds on original Part 2 discussion of availability; now grounded in Romaniuk’s *Building Distinctive Brand Assets* framework. |
 | **Services & durables** | New empirical work showing the same “laws” hold in high-involvement and infrequent-purchase categories. | Earlier edition discussed these qualitatively. |
@@ -79,7 +79,7 @@ availability.
 ## Updated Structure (approximate correspondence)
 
 | Revised Edition (2023) | Earlier Edition (2015/2019) | Main evolution |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **Ch 1–2 The scientific laws of growth** | Introductory chapters | Adds “What makes a law” and updated replication evidence. |
 | **Ch 3 How buyers really buy** | Buying behaviour & loyalty patterns | Adds repertoire graphics and buyer-mix illustrations. |
 | **Ch 4–5 Double jeopardy and duplication of purchase** | Same | Uses expanded 2020s database; now includes private labels. |
@@ -95,7 +95,7 @@ availability.
 # Core Empirical Laws (unchanged but reinforced)
 
 | Law | Essence | Updated evidence |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **1. Double Jeopardy** | Small brands suffer twice—low penetration and slightly less loyalty. | Holds across B2B, luxury, and online contexts. |
 | **2. Duplication of Purchase** | Brands share customers in proportion to market share. | Verified with \> 10,000 duplication matrices. |
 | **3. Natural monopoly of larger brands** | Heavy category buyers buy big brands more often. | Universally replicated. |
@@ -129,7 +129,7 @@ with the same consequences:
 # Key Additions in Managerial Guidance
 
 | Theme | Revised insight |
-|:-----------------------------------|:-----------------------------------|
+|:---|:---|
 | **Mental availability metrics** | Introduces *Category Entry Points* (CEPs): situations, needs, or occasions linked to the brand. Brand health ≈ % of CEPs mentally associated. |
 | **Distinctive assets** | Empirically scored on fame × uniqueness grid; tracked like distribution. |
 | **Service brands** | “Availability” translated into ease-of-contact, hours, online access, response time. |
@@ -204,9 +204,12 @@ Points (CEPs)** and **Distinctive Brand Assets (DBAs)**.
 <!-- <!--   B -->
 
 <!-- C\["Mental Availability: <br/> (brand salience, memory --\> -->
-<!-- <!-- links)"\] --\> <!--   C --> 
+
+<!-- <!-- links)"\] --\> <!--   C -->
+
 <!-- D\["Brand Choice Probability: <br/> -->
-<!-- --\> <!-- (purchase likelihood)"\] --\> --> 
+
+<!-- --\> <!-- (purchase likelihood)"\] --\> -->
 
 <!-- ``` -->
 
@@ -215,7 +218,7 @@ Points (CEPs)** and **Distinctive Brand Assets (DBAs)**.
 ### CEP Measurement Table
 
 | CEP example | \% buyers who associate brand | Distinctive assets that cue it | Relative strength |
-|:-----------------|-----------------:|:-----------------|:-----------------:|
+|:---|---:|:---|:--:|
 | “Morning energy” | 45 % | Logo colour, tagline “Kickstart your day” | 🔵 High |
 | “With friends / socialising” | 35 % | Music cue, packaging colour | 🟢 Medium |
 | “After exercise” | 20 % | Bottle shape, sports sponsorship | 🟡 Low |
@@ -235,7 +238,7 @@ Points (CEPs)** and **Distinctive Brand Assets (DBAs)**.
 Each asset is scored on two axes (Romaniuk, 2018):
 
 | Asset | Fame (% recognition) | Uniqueness (% attribution) | Quadrant | Recommended action |
-|:--------------|--------------:|--------------:|:--------------|:--------------|
+|:---|---:|---:|:---|:---|
 | Logo colour | 90 % | 80 % | 🔵 Strong asset | Maintain and protect |
 | Jingle | 70 % | 40 % | 🟢 Emerging | Reinforce with consistent exposure |
 | Slogan | 85 % | 20 % | 🟡 Over-shared | Refresh or simplify |
@@ -250,7 +253,7 @@ distribution point*.
 ### Integrated Model Summary
 
 | Layer | Key measure | Managerial implication |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | **Category Entry Points** | \% of buying occasions linked to the brand | Expand repertoire of triggers |
 | **Distinctive Assets** | Fame × Uniqueness index | Refresh and protect distinctive cues |
 | **Mental Availability** | Average retrieval strength across CEPs | Wider mental reach → more buyers |

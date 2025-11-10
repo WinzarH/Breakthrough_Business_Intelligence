@@ -45,7 +45,6 @@ link-citations: true
 Sharp, B., Kennedy, R., & Sharp, A. (2019). *How Brands Grow, Part 2:
 Emerging Markets, Services, Durables, New and Luxury Brands*. Oxford
 University Press.
-
 :::
 ::::::
 
@@ -157,7 +156,7 @@ In services and durables, “physical availability” expands beyond shelf
 space:
 
 | Aspect | Examples |
-|:--------------------------|:--------------------------------------------|
+|:---|:---|
 | **Ease of access** | App usability, website loading speed, store hours |
 | **Distribution breadth** | Number of dealerships, delivery coverage |
 | **Service accessibility** | Branch or call-centre availability, local-language support |
@@ -192,7 +191,7 @@ they were distribution points: they are memory distribution.
 A summary table from the Institute’s metrics:
 
 | Asset type   | Example                  | Managerial action                  |
-|:-----------------|:----------------------|:------------------------------|
+|:-------------|:-------------------------|:-----------------------------------|
 | Colour       | Cadbury purple           | Consistent use across media        |
 | Character    | Michelin Man             | Use frequently to build fame       |
 | Shape / pack | Coca-Cola contour bottle | Never abandon distinctive geometry |
@@ -344,7 +343,7 @@ Throughout *Part 2*, Sharp and colleagues hammer the same scientific
 stance:
 
 | Common belief | Evidence-based reality |
-|:-----------------------------------|:-----------------------------------|
+|:---|:---|
 | “Services, durables, luxury are different.” | The same buying patterns re-emerge once you control for purchase interval. |
 | “Smaller brands have loyal fans.” | Loyalty scales mechanically with size. |
 | “Niche targeting builds efficiency.” | It limits penetration and long-term growth. |
@@ -362,7 +361,7 @@ Hence the manager’s task is unchanged:
 # Summary of key quantitative patterns
 
 | Pattern / “Law” | Short description | Mathematical expression (simplified) |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---|:---|:---|
 | Negative Binomial Distribution | Purchase frequency across buyers | $P(X=x) = \frac{\Gamma(x+k)}{\Gamma(k)\,x!}\left(\frac{k}{k+\mu}\right)^k\left(\frac{\mu}{k+\mu}\right)^x$ |
 | Zero-class (non-buyers) | Share of non-buyers in period | $P(0) = \left(\frac{k}{k+\mu}\right)^k$ |
 | Double Jeopardy | Small brands have fewer & slightly less-loyal buyers | Empirical linear relation between penetration and loyalty |
@@ -414,5 +413,3 @@ behaviour governs success:
 -   Reach everyone in the category.
 
 That is still how brands grow.
-
-

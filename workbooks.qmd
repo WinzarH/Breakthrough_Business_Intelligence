@@ -9,7 +9,7 @@ format:
     number-sections: true
     code-fold: true
     html-math-method: mathjax
-    md_extensions: +link_attributes
+    # md_extensions: +link_attributes
   # pdf:
   #   toc: true
   #   number-sections: true
@@ -27,20 +27,27 @@ link-citations: true
 ## Excel workbooks and other tools
 
 **Purchase to NBD-Dirichlet**\
-An MS-Excel workbook that takes a dataframe of customer-purchases and derives parameters for the Negative Binomial model and the Dirichlet model in a set of step-by-step worksheets. 
+An MS-Excel workbook that takes a dataframe of customer-purchases and
+derives parameters for the Negative Binomial model and the Dirichlet
+model in a set of step-by-step worksheets.
 
-[Download the **Purchase to NBD** workbook](Purchase_to_NBD.xlsx){download}
+[Download the **Purchase to NBD**
+workbook](Purchase_to_NBD.xlsx){download}
 
 **k Estimator**\
-An MS-Excel macro workbook for estimating the NBD $k$ parameter from mean-category-purchases per period, $\mu$, and Observed proportion of non-buyers per period, $p(0)$.
+An MS-Excel macro workbook for estimating the NBD $k$ parameter from
+mean-category-purchases per period, $\mu$, and Observed proportion of
+non-buyers per period, $p(0)$.
 
 [Download the **Estimate k** workbook](k_estimator.xlsm){download}
 
 **Negative Binomial Probability Mass Function calculator**\
-*NB_PMF_calculator* is an _MS-Excel_ workbook that estimates the probability of specific number of purchases based on the mean-category-purchases per period, ($\mu$) and the NBD $k$ parameter. Optionally, the worksheet estimates revenue from the NBD model. 
+*NB_PMF_calculator* is an *MS-Excel* workbook that estimates the
+probability of specific number of purchases based on the
+mean-category-purchases per period, ($\mu$) and the NBD $k$ parameter.
+Optionally, the worksheet estimates revenue from the NBD model.
 
-[Download the **NB_PMF_calculator** workbook](NB_PMF_calculator.xlsm){download}
-
-
+[Download the **NB_PMF_calculator**
+workbook](NB_PMF_calculator.xlsm){download}
 
 <!-- Purchase_to_NBD.xlsx -->
