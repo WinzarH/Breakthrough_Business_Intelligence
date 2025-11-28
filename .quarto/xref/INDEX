@@ -26,5 +26,9 @@
   },
   "workbooks.qmd": {
     "workbooks.html": "549c97ca"
+  },
+  "survey2NBD.qmd": {
+    "survey2NBD.html": "e333d761",
+    "survey2NBD.tex": "33f0c8d8"
   }
 }

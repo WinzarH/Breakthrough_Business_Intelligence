@@ -18,6 +18,8 @@ website:
         text: NBD Dirichlet model
       - href: workbooks.qmd
         text: Workbooks
+      - href: survey2NBD
+        text: Survey requirements
 
 format:
   html:
