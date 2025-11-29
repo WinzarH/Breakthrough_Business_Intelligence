@@ -236,8 +236,8 @@ window.Quarto = {
 
 <section id="converting-survey-style-data-into-nbddirichlet-inputs" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Converting Survey-Style Data into NBD–Dirichlet Inputs</h1>
-<p>Although the NBD–Dirichlet model ideally uses <strong>panel data</strong> (exact counts of purchases per brand per consumer), it is still possible to approximate the required inputs using <strong>survey-style self-report data</strong>.<br>
-This section explains how to convert typical survey responses into the frequency-based quantities needed by the model.</p>
+<p>Although the NBD–Dirichlet model ideally uses <strong>panel data</strong> (exact counts of purchases per brand per consumer), it is still possible to approximate the required inputs using <strong>survey-style self-report data</strong>.</p>
+<p>This section explains how to convert typical survey responses into the frequency-based quantities needed by the model.</p>
 <hr>
 <section id="survey-data-we-might-receive" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="survey-data-we-might-receive"><span class="header-section-number">1.1</span> Survey Data We Might Receive</h2>
@@ -247,14 +247,10 @@ This section explains how to convert typical survey responses into the frequency
 <ul>
 <li>“In the past 3 months, how often did you buy this category?”
 <ul>
-<li>0 times<br>
-</li>
-<li>1–2 times<br>
-</li>
-<li>3–5 times<br>
-</li>
-<li>6–10 times<br>
-</li>
+<li>0 times</li>
+<li>1–2 times</li>
+<li>3–5 times</li>
+<li>6–10 times</li>
 <li>11+ times</li>
 </ul></li>
 </ul></li>
@@ -328,9 +324,8 @@ If we only have banded responses, then we can map each band to an approximate nu
 </tbody>
 </table>
 <p>From these converted counts, compute: - Mean category frequency <span class="math inline">\(\mu\)</span><br>
-- Zero-class proportion <span class="math inline">\(P(0)\)</span><br>
-- fit or solve for <span class="math inline">\(k\)</span> using<br>
-<span class="math display">\[
+- Zero-class proportion <span class="math inline">\(P(0)\)</span> - fit or solve for <span class="math inline">\(k\)</span> using</p>
+<p><span class="math display">\[
   P(0) = \left(\frac{k}{k+\mu}\right)^k
   \]</span></p>
 <p>This yields the <strong>NBD parameters</strong>.</p>
@@ -342,8 +337,7 @@ If we only have banded responses, then we can map each band to an approximate nu
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="option-a-brand-repertoire-only-01-per-brand"><span class="header-section-number">1.3.1</span> Option A — Brand repertoire only (0/1 per brand)</h3>
 <p>If respondents indicate which brands they bought, but <strong>not how often</strong>, we can:</p>
 <ul>
-<li>Treat each indicated brand as <strong>at least one purchase</strong>.<br>
-</li>
+<li>Treat each indicated brand as <strong>at least one purchase</strong>.</li>
 <li>Convert repertoire size into a <strong>minimal counts vector</strong>, e.g.:</li>
 </ul>
 <table class="caption-top table">
@@ -366,9 +360,11 @@ If we only have banded responses, then we can map each band to an approximate nu
 </tr>
 </tbody>
 </table>
-<p>This yields: - <strong>Brand penetrations</strong><br>
-- <strong>Duplication rates</strong><br>
-- Rough <strong>brand shares</strong> (all selected brands treated equally)</p>
+<p>This yields: - <strong>Brand penetrations</strong></p>
+<ul>
+<li><strong>Duplication rates</strong></li>
+<li>Rough <strong>brand shares</strong> (all selected brands treated equally)</li>
+</ul>
 <p>Good for teaching duplication laws; less accurate for frequency modelling.</p>
 <hr>
 </section>
@@ -414,14 +410,15 @@ If we only have banded responses, then we can map each band to an approximate nu
 <h3 data-number="1.3.3" class="anchored" data-anchor-id="option-c-primary-secondary-brand-questions"><span class="header-section-number">1.3.3</span> Option C — Primary / secondary brand questions</h3>
 <p>If respondents identify their <strong>main brand</strong> and optionally a second brand:</p>
 <ul>
-<li>Assign <strong>main brand = 70%</strong>, <strong>second brand = 30%</strong>, or similar rule-of-thumb<br>
-</li>
+<li>Assign <strong>main brand = 70%</strong>, <strong>second brand = 30%</strong>, or similar rule-of-thumb</li>
 <li>Multiply by estimated category frequency to create purchase counts</li>
 <li>Brands not listed receive 0</li>
 </ul>
-<p>This produces reasonable approximations of: - Brand shares<br>
-- Penetrations<br>
-- Duplication patterns</p>
+<p>This produces reasonable approximations of: - Brand shares</p>
+<ul>
+<li>Penetrations</li>
+<li>Duplication patterns</li>
+</ul>
 <hr>
 </section>
 </section>
@@ -470,22 +467,17 @@ If we only have banded responses, then we can map each band to an approximate nu
 <section id="nbd-inputs" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="nbd-inputs"><span class="header-section-number">1.4.1</span> NBD inputs</h3>
 <ul>
-<li><span class="math inline">\(\mu =\)</span> mean row total<br>
-</li>
-<li><span class="math inline">\(P(0)\)</span> = proportion of respondents with 0 buys<br>
-</li>
+<li><span class="math inline">\(\mu =\)</span> mean row total</li>
+<li><span class="math inline">\(P(0)\)</span> = proportion of respondents with 0 buys</li>
 <li><span class="math inline">\(k\)</span> = derived from <span class="math inline">\(\mu\)</span> and <span class="math inline">\(P(0)\)</span></li>
 </ul>
 </section>
 <section id="dirichlet-inputs" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="dirichlet-inputs"><span class="header-section-number">1.4.2</span> Dirichlet inputs</h3>
 <ul>
-<li><span class="math inline">\(s_i =\)</span> column total / grand total<br>
-</li>
-<li>Brand penetrations <span class="math inline">\(p_i\)</span> = proportion of rows with count &gt; 0<br>
-</li>
-<li>Duplication matrix = cross-brand overlaps<br>
-</li>
+<li><span class="math inline">\(s_i =\)</span> column total / grand total</li>
+<li>Brand penetrations <span class="math inline">\(p_i\)</span> = proportion of rows with count &gt; 0</li>
+<li>Duplication matrix = cross-brand overlaps</li>
 <li>Estimate <span class="math inline">\(\alpha_0\)</span> from duplication or adopt a reasonable value (5–40)</li>
 </ul>
 <hr>
@@ -507,16 +499,18 @@ If we only have banded responses, then we can map each band to an approximate nu
 The NBD–Dirichlet model needs <strong>behavioural frequencies</strong>, not attitudes.</p>
 </div>
 </div>
-<p>Even approximate pseudo-counts can provide: - Category frequency distribution → NBD<br>
-- Brand shares and duplication → Dirichlet<br>
-- Predicted penetrations, loyalty patterns, and growth effects</p>
+<p>Even approximate pseudo-counts can provide: - Category frequency distribution → NBD</p>
+<ul>
+<li>Brand shares and duplication → Dirichlet</li>
+<li>Predicted penetrations, loyalty patterns, and growth effects</li>
+</ul>
 <p>Enough to support robust <strong>diagnostic reasoning</strong>, and simplified <strong>market simulations</strong>.</p>
 </section>
 </section>
 <section id="determining-the-base-population-and-computing-p0-in-the-nbddirichlet-model" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Determining the Base Population and Computing <span class="math inline">\(P(0)\)</span> in the NBD–Dirichlet Model</h1>
-<p>A common point of confusion is <strong>who counts as a “category buyer”</strong> and therefore who belongs in the <strong>NBD population</strong>.<br>
-This matters because the NBD uses the proportion of consumers who made <strong>zero</strong> purchases in the observation period:</p>
+<p>A common point of confusion is <strong>who counts as a “category buyer”</strong> and therefore who belongs in the <strong>NBD population</strong>.</p>
+<p>This matters because the NBD uses the proportion of consumers who made <strong>zero</strong> purchases in the observation period:</p>
 <p><span class="math display">\[
 P(0) = \Pr(\text{0 category purchases in the time window}).
 \]</span></p>
@@ -528,10 +522,10 @@ This section provides a simple decision process to determine the correct base po
 <p>For almost any category, individuals fall into one of three groups:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 28%">
-<col style="width: 28%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 26%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -697,7 +691,7 @@ Q3 --&gt;|No| lb
 <p><span class="math display">\[
 P(0) = \frac{\text{n of consumers with 0 purchases}}{N} = \frac{8}{32} = 0.25
 \]</span></p></li>
-<li><p><strong>Dispersion parameter <span class="math inline">\(k\)</span></strong> (solved numerically)</p>
+<li><p><strong>Dispersion parameter</strong> <span class="math inline">\(k\)</span> (solved numerically)</p>
 <p>The NBD gives the probability of zero purchases as:</p>
 <p><span class="math display">\[
 P(0) = \left(\frac{k}{k+\mu}\right)^k
@@ -728,22 +722,25 @@ P(0) = \left(\frac{k}{k+\mu}\right)^k
 </section>
 <section id="b.-exclude-structural-non-buyers" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="b.-exclude-structural-non-buyers"><span class="header-section-number">2.5.2</span> B. Exclude structural non-buyers</h3>
-<p>Individuals who <em>never</em> buy the category: - Should <strong>not</strong> be included in the NBD population<br>
-- Should <strong>not</strong> count toward <span class="math inline">\(P(0)\)</span><br>
-- Otherwise, they inflate <span class="math inline">\(P(0)\)</span> and distort <span class="math inline">\(k\)</span></p>
+<p>Individuals who <em>never</em> buy the category: - Should <strong>not</strong> be included in the NBD population</p>
+<ul>
+<li>Should <strong>not</strong> count toward <span class="math inline">\(P(0)\)</span></li>
+<li>Otherwise, they inflate <span class="math inline">\(P(0)\)</span> and distort <span class="math inline">\(k\)</span></li>
+</ul>
 </section>
 <section id="c.-shorter-time-windows-produce-more-zero-buyers" class="level3" data-number="2.5.3">
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="c.-shorter-time-windows-produce-more-zero-buyers"><span class="header-section-number">2.5.3</span> C. Shorter time windows produce more zero-buyers</h3>
-<p>This is expected: - A 4-week period may have 40–60% zero-buyers<br>
-- A 12-month period usually has very few</p>
-<p>The choice of period should match: - the category purchase cycle<br>
-- the analytical purpose<br>
-- standardisation across brands</p>
+<p>This is expected: - A 4-week period may have 40–60% zero-buyers - A 12-month period usually has very few</p>
+<p>The choice of period should match: - the category purchase cycle</p>
+<ul>
+<li>the analytical purpose</li>
+<li>standardisation across brands</li>
+</ul>
 </section>
 <section id="d.-infrequent-buyers-are-legitimate-zero-buyers" class="level3" data-number="2.5.4">
 <h3 data-number="2.5.4" class="anchored" data-anchor-id="d.-infrequent-buyers-are-legitimate-zero-buyers"><span class="header-section-number">2.5.4</span> D. Infrequent buyers are legitimate zero-buyers</h3>
 <p>Consumers who buy the category occasionally but <strong>did not buy this period</strong> are <em>exactly</em> the people the NBD is designed to model.</p>
-<p>They must be <strong>included</strong> in the base population and count toward <strong><span class="math inline">\(P(0)\)</span></strong>.</p>
+<p>They must be <strong>included</strong> in the base population and count toward <span class="math inline">\(P(0)\)</span>.</p>
 <hr>
 </section>
 </section>
@@ -760,14 +757,10 @@ P(0) = \left(\frac{k}{k+\mu}\right)^k
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Define the <strong>category-active population</strong> first.<br>
-</li>
-<li>Exclude <strong>structural non-buyers</strong> (people who <em>never</em> buy the category).<br>
-</li>
-<li>Among the active population, count those with <strong>zero purchases in the analysis period</strong> — this is <span class="math inline">\(P(0)\)</span>.<br>
-</li>
-<li>Use the resulting frequency distribution to compute <span class="math inline">\(\mu\)</span> and solve for <span class="math inline">\(k\)</span>.<br>
-</li>
+<li>Define the <strong>category-active population</strong> first.</li>
+<li>Exclude <strong>structural non-buyers</strong> (people who <em>never</em> buy the category).</li>
+<li>Among the active population, count those with <strong>zero purchases in the analysis period</strong> — this is <span class="math inline">\(P(0)\)</span>.</li>
+<li>Use the resulting frequency distribution to compute <span class="math inline">\(\mu\)</span> and solve for <span class="math inline">\(k\)</span>.</li>
 </ul>
 </div>
 </div>
